@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/*
+bin/
+debug
+debug/
+tmp/
+.env
+data/
+.graphqlrc.yml
+tests/__debug_*

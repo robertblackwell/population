@@ -1,0 +1,4370 @@
+[
+  {
+    "value": 1189,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 0,
+    "gender": "Total"
+  },
+  {
+    "value": 1150,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 1,
+    "gender": "Total"
+  },
+  {
+    "value": 1190,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 2,
+    "gender": "Total"
+  },
+  {
+    "value": 1158,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 3,
+    "gender": "Total"
+  },
+  {
+    "value": 1204,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 4,
+    "gender": "Total"
+  },
+  {
+    "value": 1216,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 5,
+    "gender": "Total"
+  },
+  {
+    "value": 1258,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 6,
+    "gender": "Total"
+  },
+  {
+    "value": 1283,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 7,
+    "gender": "Total"
+  },
+  {
+    "value": 1220,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 8,
+    "gender": "Total"
+  },
+  {
+    "value": 1109,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 9,
+    "gender": "Total"
+  },
+  {
+    "value": 1162,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 10,
+    "gender": "Total"
+  },
+  {
+    "value": 1138,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 11,
+    "gender": "Total"
+  },
+  {
+    "value": 1014,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 12,
+    "gender": "Total"
+  },
+  {
+    "value": 954,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 13,
+    "gender": "Total"
+  },
+  {
+    "value": 989,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 14,
+    "gender": "Total"
+  },
+  {
+    "value": 987,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 15,
+    "gender": "Total"
+  },
+  {
+    "value": 931,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 16,
+    "gender": "Total"
+  },
+  {
+    "value": 921,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 17,
+    "gender": "Total"
+  },
+  {
+    "value": 1013,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 18,
+    "gender": "Total"
+  },
+  {
+    "value": 709,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 19,
+    "gender": "Total"
+  },
+  {
+    "value": 801,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 20,
+    "gender": "Total"
+  },
+  {
+    "value": 864,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 21,
+    "gender": "Total"
+  },
+  {
+    "value": 1053,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 22,
+    "gender": "Total"
+  },
+  {
+    "value": 1055,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 23,
+    "gender": "Total"
+  },
+  {
+    "value": 1190,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 24,
+    "gender": "Total"
+  },
+  {
+    "value": 1165,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 25,
+    "gender": "Total"
+  },
+  {
+    "value": 1120,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 26,
+    "gender": "Total"
+  },
+  {
+    "value": 1246,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 27,
+    "gender": "Total"
+  },
+  {
+    "value": 1308,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 28,
+    "gender": "Total"
+  },
+  {
+    "value": 1388,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 29,
+    "gender": "Total"
+  },
+  {
+    "value": 1335,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 30,
+    "gender": "Total"
+  },
+  {
+    "value": 1373,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 31,
+    "gender": "Total"
+  },
+  {
+    "value": 1417,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 32,
+    "gender": "Total"
+  },
+  {
+    "value": 1405,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 33,
+    "gender": "Total"
+  },
+  {
+    "value": 1286,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 34,
+    "gender": "Total"
+  },
+  {
+    "value": 1377,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 35,
+    "gender": "Total"
+  },
+  {
+    "value": 1243,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 36,
+    "gender": "Total"
+  },
+  {
+    "value": 1332,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 37,
+    "gender": "Total"
+  },
+  {
+    "value": 1282,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 38,
+    "gender": "Total"
+  },
+  {
+    "value": 1197,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 39,
+    "gender": "Total"
+  },
+  {
+    "value": 1074,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 40,
+    "gender": "Total"
+  },
+  {
+    "value": 1101,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 41,
+    "gender": "Total"
+  },
+  {
+    "value": 1107,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 42,
+    "gender": "Total"
+  },
+  {
+    "value": 1040,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 43,
+    "gender": "Total"
+  },
+  {
+    "value": 1015,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 44,
+    "gender": "Total"
+  },
+  {
+    "value": 1162,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 45,
+    "gender": "Total"
+  },
+  {
+    "value": 1125,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 46,
+    "gender": "Total"
+  },
+  {
+    "value": 1194,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 47,
+    "gender": "Total"
+  },
+  {
+    "value": 1192,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 48,
+    "gender": "Total"
+  },
+  {
+    "value": 1274,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 49,
+    "gender": "Total"
+  },
+  {
+    "value": 1231,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 50,
+    "gender": "Total"
+  },
+  {
+    "value": 1276,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 51,
+    "gender": "Total"
+  },
+  {
+    "value": 1364,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 52,
+    "gender": "Total"
+  },
+  {
+    "value": 1300,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 53,
+    "gender": "Total"
+  },
+  {
+    "value": 1311,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 54,
+    "gender": "Total"
+  },
+  {
+    "value": 1284,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 55,
+    "gender": "Total"
+  },
+  {
+    "value": 1264,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 56,
+    "gender": "Total"
+  },
+  {
+    "value": 1083,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 57,
+    "gender": "Total"
+  },
+  {
+    "value": 1073,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 58,
+    "gender": "Total"
+  },
+  {
+    "value": 1105,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 59,
+    "gender": "Total"
+  },
+  {
+    "value": 1039,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 60,
+    "gender": "Total"
+  },
+  {
+    "value": 982,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 61,
+    "gender": "Total"
+  },
+  {
+    "value": 918,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 62,
+    "gender": "Total"
+  },
+  {
+    "value": 869,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 63,
+    "gender": "Total"
+  },
+  {
+    "value": 798,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 64,
+    "gender": "Total"
+  },
+  {
+    "value": 744,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 65,
+    "gender": "Total"
+  },
+  {
+    "value": 728,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 66,
+    "gender": "Total"
+  },
+  {
+    "value": 688,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 67,
+    "gender": "Total"
+  },
+  {
+    "value": 724,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 68,
+    "gender": "Total"
+  },
+  {
+    "value": 688,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 69,
+    "gender": "Total"
+  },
+  {
+    "value": 751,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 70,
+    "gender": "Total"
+  },
+  {
+    "value": 829,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 71,
+    "gender": "Total"
+  },
+  {
+    "value": 618,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 72,
+    "gender": "Total"
+  },
+  {
+    "value": 598,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 73,
+    "gender": "Total"
+  },
+  {
+    "value": 550,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 74,
+    "gender": "Total"
+  },
+  {
+    "value": 575,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 75,
+    "gender": "Total"
+  },
+  {
+    "value": 477,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 76,
+    "gender": "Total"
+  },
+  {
+    "value": 416,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 77,
+    "gender": "Total"
+  },
+  {
+    "value": 474,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 78,
+    "gender": "Total"
+  },
+  {
+    "value": 444,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 79,
+    "gender": "Total"
+  },
+  {
+    "value": 431,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 80,
+    "gender": "Total"
+  },
+  {
+    "value": 436,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 81,
+    "gender": "Total"
+  },
+  {
+    "value": 412,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 82,
+    "gender": "Total"
+  },
+  {
+    "value": 417,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 83,
+    "gender": "Total"
+  },
+  {
+    "value": 366,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 84,
+    "gender": "Total"
+  },
+  {
+    "value": 260,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 85,
+    "gender": "Total"
+  },
+  {
+    "value": 304,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 86,
+    "gender": "Total"
+  },
+  {
+    "value": 289,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 87,
+    "gender": "Total"
+  },
+  {
+    "value": 225,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 88,
+    "gender": "Total"
+  },
+  {
+    "value": 210,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 89,
+    "gender": "Total"
+  },
+  {
+    "value": 687,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2018-01-01",
+    "age": 90,
+    "gender": "Total"
+  },
+  {
+    "value": 1088,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 0,
+    "gender": "Total"
+  },
+  {
+    "value": 1180,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 1,
+    "gender": "Total"
+  },
+  {
+    "value": 1153,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 2,
+    "gender": "Total"
+  },
+  {
+    "value": 1202,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 3,
+    "gender": "Total"
+  },
+  {
+    "value": 1164,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 4,
+    "gender": "Total"
+  },
+  {
+    "value": 1198,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 5,
+    "gender": "Total"
+  },
+  {
+    "value": 1209,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 6,
+    "gender": "Total"
+  },
+  {
+    "value": 1252,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 7,
+    "gender": "Total"
+  },
+  {
+    "value": 1272,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 8,
+    "gender": "Total"
+  },
+  {
+    "value": 1207,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 9,
+    "gender": "Total"
+  },
+  {
+    "value": 1102,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 10,
+    "gender": "Total"
+  },
+  {
+    "value": 1146,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 11,
+    "gender": "Total"
+  },
+  {
+    "value": 1127,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 12,
+    "gender": "Total"
+  },
+  {
+    "value": 1013,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 13,
+    "gender": "Total"
+  },
+  {
+    "value": 956,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 14,
+    "gender": "Total"
+  },
+  {
+    "value": 987,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 15,
+    "gender": "Total"
+  },
+  {
+    "value": 991,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 16,
+    "gender": "Total"
+  },
+  {
+    "value": 917,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 17,
+    "gender": "Total"
+  },
+  {
+    "value": 878,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 18,
+    "gender": "Total"
+  },
+  {
+    "value": 769,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 19,
+    "gender": "Total"
+  },
+  {
+    "value": 705,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 20,
+    "gender": "Total"
+  },
+  {
+    "value": 903,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 21,
+    "gender": "Total"
+  },
+  {
+    "value": 943,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 22,
+    "gender": "Total"
+  },
+  {
+    "value": 1139,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 23,
+    "gender": "Total"
+  },
+  {
+    "value": 1120,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 24,
+    "gender": "Total"
+  },
+  {
+    "value": 1222,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 25,
+    "gender": "Total"
+  },
+  {
+    "value": 1196,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 26,
+    "gender": "Total"
+  },
+  {
+    "value": 1178,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 27,
+    "gender": "Total"
+  },
+  {
+    "value": 1268,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 28,
+    "gender": "Total"
+  },
+  {
+    "value": 1325,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 29,
+    "gender": "Total"
+  },
+  {
+    "value": 1379,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 30,
+    "gender": "Total"
+  },
+  {
+    "value": 1364,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 31,
+    "gender": "Total"
+  },
+  {
+    "value": 1386,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 32,
+    "gender": "Total"
+  },
+  {
+    "value": 1421,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 33,
+    "gender": "Total"
+  },
+  {
+    "value": 1382,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 34,
+    "gender": "Total"
+  },
+  {
+    "value": 1287,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 35,
+    "gender": "Total"
+  },
+  {
+    "value": 1378,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 36,
+    "gender": "Total"
+  },
+  {
+    "value": 1243,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 37,
+    "gender": "Total"
+  },
+  {
+    "value": 1334,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 38,
+    "gender": "Total"
+  },
+  {
+    "value": 1289,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 39,
+    "gender": "Total"
+  },
+  {
+    "value": 1195,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 40,
+    "gender": "Total"
+  },
+  {
+    "value": 1066,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 41,
+    "gender": "Total"
+  },
+  {
+    "value": 1085,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 42,
+    "gender": "Total"
+  },
+  {
+    "value": 1095,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 43,
+    "gender": "Total"
+  },
+  {
+    "value": 1044,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 44,
+    "gender": "Total"
+  },
+  {
+    "value": 1018,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 45,
+    "gender": "Total"
+  },
+  {
+    "value": 1143,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 46,
+    "gender": "Total"
+  },
+  {
+    "value": 1123,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 47,
+    "gender": "Total"
+  },
+  {
+    "value": 1192,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 48,
+    "gender": "Total"
+  },
+  {
+    "value": 1189,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 49,
+    "gender": "Total"
+  },
+  {
+    "value": 1272,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 50,
+    "gender": "Total"
+  },
+  {
+    "value": 1229,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 51,
+    "gender": "Total"
+  },
+  {
+    "value": 1260,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 52,
+    "gender": "Total"
+  },
+  {
+    "value": 1360,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 53,
+    "gender": "Total"
+  },
+  {
+    "value": 1289,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 54,
+    "gender": "Total"
+  },
+  {
+    "value": 1290,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 55,
+    "gender": "Total"
+  },
+  {
+    "value": 1254,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 56,
+    "gender": "Total"
+  },
+  {
+    "value": 1239,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 57,
+    "gender": "Total"
+  },
+  {
+    "value": 1058,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 58,
+    "gender": "Total"
+  },
+  {
+    "value": 1048,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 59,
+    "gender": "Total"
+  },
+  {
+    "value": 1083,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 60,
+    "gender": "Total"
+  },
+  {
+    "value": 1014,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 61,
+    "gender": "Total"
+  },
+  {
+    "value": 957,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 62,
+    "gender": "Total"
+  },
+  {
+    "value": 907,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 63,
+    "gender": "Total"
+  },
+  {
+    "value": 850,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 64,
+    "gender": "Total"
+  },
+  {
+    "value": 779,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 65,
+    "gender": "Total"
+  },
+  {
+    "value": 726,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 66,
+    "gender": "Total"
+  },
+  {
+    "value": 713,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 67,
+    "gender": "Total"
+  },
+  {
+    "value": 670,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 68,
+    "gender": "Total"
+  },
+  {
+    "value": 708,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 69,
+    "gender": "Total"
+  },
+  {
+    "value": 663,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 70,
+    "gender": "Total"
+  },
+  {
+    "value": 726,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 71,
+    "gender": "Total"
+  },
+  {
+    "value": 808,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 72,
+    "gender": "Total"
+  },
+  {
+    "value": 600,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 73,
+    "gender": "Total"
+  },
+  {
+    "value": 574,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 74,
+    "gender": "Total"
+  },
+  {
+    "value": 537,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 75,
+    "gender": "Total"
+  },
+  {
+    "value": 552,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 76,
+    "gender": "Total"
+  },
+  {
+    "value": 462,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 77,
+    "gender": "Total"
+  },
+  {
+    "value": 397,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 78,
+    "gender": "Total"
+  },
+  {
+    "value": 457,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 79,
+    "gender": "Total"
+  },
+  {
+    "value": 428,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 80,
+    "gender": "Total"
+  },
+  {
+    "value": 415,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 81,
+    "gender": "Total"
+  },
+  {
+    "value": 417,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 82,
+    "gender": "Total"
+  },
+  {
+    "value": 388,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 83,
+    "gender": "Total"
+  },
+  {
+    "value": 393,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 84,
+    "gender": "Total"
+  },
+  {
+    "value": 339,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 85,
+    "gender": "Total"
+  },
+  {
+    "value": 239,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 86,
+    "gender": "Total"
+  },
+  {
+    "value": 270,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 87,
+    "gender": "Total"
+  },
+  {
+    "value": 254,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 88,
+    "gender": "Total"
+  },
+  {
+    "value": 202,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 89,
+    "gender": "Total"
+  },
+  {
+    "value": 739,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2019-01-01",
+    "age": 90,
+    "gender": "Total"
+  },
+  {
+    "value": 1094,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 0,
+    "gender": "Total"
+  },
+  {
+    "value": 1084,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 1,
+    "gender": "Total"
+  },
+  {
+    "value": 1179,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 2,
+    "gender": "Total"
+  },
+  {
+    "value": 1165,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 3,
+    "gender": "Total"
+  },
+  {
+    "value": 1206,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 4,
+    "gender": "Total"
+  },
+  {
+    "value": 1159,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 5,
+    "gender": "Total"
+  },
+  {
+    "value": 1191,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 6,
+    "gender": "Total"
+  },
+  {
+    "value": 1203,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 7,
+    "gender": "Total"
+  },
+  {
+    "value": 1244,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 8,
+    "gender": "Total"
+  },
+  {
+    "value": 1257,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 9,
+    "gender": "Total"
+  },
+  {
+    "value": 1197,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 10,
+    "gender": "Total"
+  },
+  {
+    "value": 1090,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 11,
+    "gender": "Total"
+  },
+  {
+    "value": 1136,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 12,
+    "gender": "Total"
+  },
+  {
+    "value": 1123,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 13,
+    "gender": "Total"
+  },
+  {
+    "value": 1013,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 14,
+    "gender": "Total"
+  },
+  {
+    "value": 956,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 15,
+    "gender": "Total"
+  },
+  {
+    "value": 993,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 16,
+    "gender": "Total"
+  },
+  {
+    "value": 974,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 17,
+    "gender": "Total"
+  },
+  {
+    "value": 873,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 18,
+    "gender": "Total"
+  },
+  {
+    "value": 671,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 19,
+    "gender": "Total"
+  },
+  {
+    "value": 754,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 20,
+    "gender": "Total"
+  },
+  {
+    "value": 820,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 21,
+    "gender": "Total"
+  },
+  {
+    "value": 971,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 22,
+    "gender": "Total"
+  },
+  {
+    "value": 1039,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 23,
+    "gender": "Total"
+  },
+  {
+    "value": 1195,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 24,
+    "gender": "Total"
+  },
+  {
+    "value": 1153,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 25,
+    "gender": "Total"
+  },
+  {
+    "value": 1249,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 26,
+    "gender": "Total"
+  },
+  {
+    "value": 1244,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 27,
+    "gender": "Total"
+  },
+  {
+    "value": 1204,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 28,
+    "gender": "Total"
+  },
+  {
+    "value": 1291,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 29,
+    "gender": "Total"
+  },
+  {
+    "value": 1322,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 30,
+    "gender": "Total"
+  },
+  {
+    "value": 1402,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 31,
+    "gender": "Total"
+  },
+  {
+    "value": 1382,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 32,
+    "gender": "Total"
+  },
+  {
+    "value": 1390,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 33,
+    "gender": "Total"
+  },
+  {
+    "value": 1398,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 34,
+    "gender": "Total"
+  },
+  {
+    "value": 1375,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 35,
+    "gender": "Total"
+  },
+  {
+    "value": 1293,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 36,
+    "gender": "Total"
+  },
+  {
+    "value": 1365,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 37,
+    "gender": "Total"
+  },
+  {
+    "value": 1250,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 38,
+    "gender": "Total"
+  },
+  {
+    "value": 1335,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 39,
+    "gender": "Total"
+  },
+  {
+    "value": 1284,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 40,
+    "gender": "Total"
+  },
+  {
+    "value": 1185,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 41,
+    "gender": "Total"
+  },
+  {
+    "value": 1053,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 42,
+    "gender": "Total"
+  },
+  {
+    "value": 1074,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 43,
+    "gender": "Total"
+  },
+  {
+    "value": 1096,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 44,
+    "gender": "Total"
+  },
+  {
+    "value": 1045,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 45,
+    "gender": "Total"
+  },
+  {
+    "value": 1005,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 46,
+    "gender": "Total"
+  },
+  {
+    "value": 1138,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 47,
+    "gender": "Total"
+  },
+  {
+    "value": 1123,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 48,
+    "gender": "Total"
+  },
+  {
+    "value": 1190,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 49,
+    "gender": "Total"
+  },
+  {
+    "value": 1189,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 50,
+    "gender": "Total"
+  },
+  {
+    "value": 1268,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 51,
+    "gender": "Total"
+  },
+  {
+    "value": 1215,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 52,
+    "gender": "Total"
+  },
+  {
+    "value": 1260,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 53,
+    "gender": "Total"
+  },
+  {
+    "value": 1347,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 54,
+    "gender": "Total"
+  },
+  {
+    "value": 1270,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 55,
+    "gender": "Total"
+  },
+  {
+    "value": 1259,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 56,
+    "gender": "Total"
+  },
+  {
+    "value": 1231,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 57,
+    "gender": "Total"
+  },
+  {
+    "value": 1208,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 58,
+    "gender": "Total"
+  },
+  {
+    "value": 1035,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 59,
+    "gender": "Total"
+  },
+  {
+    "value": 1030,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 60,
+    "gender": "Total"
+  },
+  {
+    "value": 1057,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 61,
+    "gender": "Total"
+  },
+  {
+    "value": 989,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 62,
+    "gender": "Total"
+  },
+  {
+    "value": 946,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 63,
+    "gender": "Total"
+  },
+  {
+    "value": 887,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 64,
+    "gender": "Total"
+  },
+  {
+    "value": 828,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 65,
+    "gender": "Total"
+  },
+  {
+    "value": 760,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 66,
+    "gender": "Total"
+  },
+  {
+    "value": 710,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 67,
+    "gender": "Total"
+  },
+  {
+    "value": 693,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 68,
+    "gender": "Total"
+  },
+  {
+    "value": 655,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 69,
+    "gender": "Total"
+  },
+  {
+    "value": 681,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 70,
+    "gender": "Total"
+  },
+  {
+    "value": 641,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 71,
+    "gender": "Total"
+  },
+  {
+    "value": 709,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 72,
+    "gender": "Total"
+  },
+  {
+    "value": 784,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 73,
+    "gender": "Total"
+  },
+  {
+    "value": 576,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 74,
+    "gender": "Total"
+  },
+  {
+    "value": 559,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 75,
+    "gender": "Total"
+  },
+  {
+    "value": 518,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 76,
+    "gender": "Total"
+  },
+  {
+    "value": 533,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 77,
+    "gender": "Total"
+  },
+  {
+    "value": 439,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 78,
+    "gender": "Total"
+  },
+  {
+    "value": 382,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 79,
+    "gender": "Total"
+  },
+  {
+    "value": 440,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 80,
+    "gender": "Total"
+  },
+  {
+    "value": 412,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 81,
+    "gender": "Total"
+  },
+  {
+    "value": 395,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 82,
+    "gender": "Total"
+  },
+  {
+    "value": 392,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 83,
+    "gender": "Total"
+  },
+  {
+    "value": 365,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 84,
+    "gender": "Total"
+  },
+  {
+    "value": 364,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 85,
+    "gender": "Total"
+  },
+  {
+    "value": 309,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 86,
+    "gender": "Total"
+  },
+  {
+    "value": 215,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 87,
+    "gender": "Total"
+  },
+  {
+    "value": 239,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 88,
+    "gender": "Total"
+  },
+  {
+    "value": 225,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 89,
+    "gender": "Total"
+  },
+  {
+    "value": 769,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2020-01-01",
+    "age": 90,
+    "gender": "Total"
+  },
+  {
+    "value": 1093,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 0,
+    "gender": "Total"
+  },
+  {
+    "value": 1090,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 1,
+    "gender": "Total"
+  },
+  {
+    "value": 1086,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 2,
+    "gender": "Total"
+  },
+  {
+    "value": 1188,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 3,
+    "gender": "Total"
+  },
+  {
+    "value": 1170,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 4,
+    "gender": "Total"
+  },
+  {
+    "value": 1200,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 5,
+    "gender": "Total"
+  },
+  {
+    "value": 1153,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 6,
+    "gender": "Total"
+  },
+  {
+    "value": 1185,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 7,
+    "gender": "Total"
+  },
+  {
+    "value": 1195,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 8,
+    "gender": "Total"
+  },
+  {
+    "value": 1231,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 9,
+    "gender": "Total"
+  },
+  {
+    "value": 1245,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 10,
+    "gender": "Total"
+  },
+  {
+    "value": 1180,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 11,
+    "gender": "Total"
+  },
+  {
+    "value": 1082,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 12,
+    "gender": "Total"
+  },
+  {
+    "value": 1134,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 13,
+    "gender": "Total"
+  },
+  {
+    "value": 1121,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 14,
+    "gender": "Total"
+  },
+  {
+    "value": 1011,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 15,
+    "gender": "Total"
+  },
+  {
+    "value": 962,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 16,
+    "gender": "Total"
+  },
+  {
+    "value": 977,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 17,
+    "gender": "Total"
+  },
+  {
+    "value": 926,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 18,
+    "gender": "Total"
+  },
+  {
+    "value": 667,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 19,
+    "gender": "Total"
+  },
+  {
+    "value": 668,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 20,
+    "gender": "Total"
+  },
+  {
+    "value": 867,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 21,
+    "gender": "Total"
+  },
+  {
+    "value": 903,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 22,
+    "gender": "Total"
+  },
+  {
+    "value": 1058,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 23,
+    "gender": "Total"
+  },
+  {
+    "value": 1103,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 24,
+    "gender": "Total"
+  },
+  {
+    "value": 1216,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 25,
+    "gender": "Total"
+  },
+  {
+    "value": 1180,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 26,
+    "gender": "Total"
+  },
+  {
+    "value": 1293,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 27,
+    "gender": "Total"
+  },
+  {
+    "value": 1261,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 28,
+    "gender": "Total"
+  },
+  {
+    "value": 1230,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 29,
+    "gender": "Total"
+  },
+  {
+    "value": 1292,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 30,
+    "gender": "Total"
+  },
+  {
+    "value": 1348,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 31,
+    "gender": "Total"
+  },
+  {
+    "value": 1413,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 32,
+    "gender": "Total"
+  },
+  {
+    "value": 1389,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 33,
+    "gender": "Total"
+  },
+  {
+    "value": 1368,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 34,
+    "gender": "Total"
+  },
+  {
+    "value": 1391,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 35,
+    "gender": "Total"
+  },
+  {
+    "value": 1376,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 36,
+    "gender": "Total"
+  },
+  {
+    "value": 1287,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 37,
+    "gender": "Total"
+  },
+  {
+    "value": 1363,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 38,
+    "gender": "Total"
+  },
+  {
+    "value": 1257,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 39,
+    "gender": "Total"
+  },
+  {
+    "value": 1327,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 40,
+    "gender": "Total"
+  },
+  {
+    "value": 1271,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 41,
+    "gender": "Total"
+  },
+  {
+    "value": 1168,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 42,
+    "gender": "Total"
+  },
+  {
+    "value": 1044,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 43,
+    "gender": "Total"
+  },
+  {
+    "value": 1075,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 44,
+    "gender": "Total"
+  },
+  {
+    "value": 1094,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 45,
+    "gender": "Total"
+  },
+  {
+    "value": 1031,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 46,
+    "gender": "Total"
+  },
+  {
+    "value": 1005,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 47,
+    "gender": "Total"
+  },
+  {
+    "value": 1137,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 48,
+    "gender": "Total"
+  },
+  {
+    "value": 1123,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 49,
+    "gender": "Total"
+  },
+  {
+    "value": 1192,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 50,
+    "gender": "Total"
+  },
+  {
+    "value": 1187,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 51,
+    "gender": "Total"
+  },
+  {
+    "value": 1252,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 52,
+    "gender": "Total"
+  },
+  {
+    "value": 1215,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 53,
+    "gender": "Total"
+  },
+  {
+    "value": 1250,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 54,
+    "gender": "Total"
+  },
+  {
+    "value": 1324,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 55,
+    "gender": "Total"
+  },
+  {
+    "value": 1242,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 56,
+    "gender": "Total"
+  },
+  {
+    "value": 1237,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 57,
+    "gender": "Total"
+  },
+  {
+    "value": 1201,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 58,
+    "gender": "Total"
+  },
+  {
+    "value": 1179,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 59,
+    "gender": "Total"
+  },
+  {
+    "value": 1017,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 60,
+    "gender": "Total"
+  },
+  {
+    "value": 1007,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 61,
+    "gender": "Total"
+  },
+  {
+    "value": 1030,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 62,
+    "gender": "Total"
+  },
+  {
+    "value": 976,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 63,
+    "gender": "Total"
+  },
+  {
+    "value": 924,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 64,
+    "gender": "Total"
+  },
+  {
+    "value": 865,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 65,
+    "gender": "Total"
+  },
+  {
+    "value": 807,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 66,
+    "gender": "Total"
+  },
+  {
+    "value": 743,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 67,
+    "gender": "Total"
+  },
+  {
+    "value": 690,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 68,
+    "gender": "Total"
+  },
+  {
+    "value": 677,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 69,
+    "gender": "Total"
+  },
+  {
+    "value": 631,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 70,
+    "gender": "Total"
+  },
+  {
+    "value": 659,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 71,
+    "gender": "Total"
+  },
+  {
+    "value": 627,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 72,
+    "gender": "Total"
+  },
+  {
+    "value": 690,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 73,
+    "gender": "Total"
+  },
+  {
+    "value": 753,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 74,
+    "gender": "Total"
+  },
+  {
+    "value": 563,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 75,
+    "gender": "Total"
+  },
+  {
+    "value": 539,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 76,
+    "gender": "Total"
+  },
+  {
+    "value": 501,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 77,
+    "gender": "Total"
+  },
+  {
+    "value": 507,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 78,
+    "gender": "Total"
+  },
+  {
+    "value": 422,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 79,
+    "gender": "Total"
+  },
+  {
+    "value": 367,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 80,
+    "gender": "Total"
+  },
+  {
+    "value": 423,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 81,
+    "gender": "Total"
+  },
+  {
+    "value": 393,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 82,
+    "gender": "Total"
+  },
+  {
+    "value": 373,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 83,
+    "gender": "Total"
+  },
+  {
+    "value": 369,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 84,
+    "gender": "Total"
+  },
+  {
+    "value": 337,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 85,
+    "gender": "Total"
+  },
+  {
+    "value": 330,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 86,
+    "gender": "Total"
+  },
+  {
+    "value": 277,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 87,
+    "gender": "Total"
+  },
+  {
+    "value": 193,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 88,
+    "gender": "Total"
+  },
+  {
+    "value": 213,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 89,
+    "gender": "Total"
+  },
+  {
+    "value": 812,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2021-01-01",
+    "age": 90,
+    "gender": "Total"
+  },
+  {
+    "value": 1086,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 0,
+    "gender": "Total"
+  },
+  {
+    "value": 1088,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 1,
+    "gender": "Total"
+  },
+  {
+    "value": 1091,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 2,
+    "gender": "Total"
+  },
+  {
+    "value": 1097,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 3,
+    "gender": "Total"
+  },
+  {
+    "value": 1190,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 4,
+    "gender": "Total"
+  },
+  {
+    "value": 1164,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 5,
+    "gender": "Total"
+  },
+  {
+    "value": 1193,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 6,
+    "gender": "Total"
+  },
+  {
+    "value": 1148,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 7,
+    "gender": "Total"
+  },
+  {
+    "value": 1177,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 8,
+    "gender": "Total"
+  },
+  {
+    "value": 1183,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 9,
+    "gender": "Total"
+  },
+  {
+    "value": 1221,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 10,
+    "gender": "Total"
+  },
+  {
+    "value": 1227,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 11,
+    "gender": "Total"
+  },
+  {
+    "value": 1170,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 12,
+    "gender": "Total"
+  },
+  {
+    "value": 1081,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 13,
+    "gender": "Total"
+  },
+  {
+    "value": 1133,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 14,
+    "gender": "Total"
+  },
+  {
+    "value": 1117,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 15,
+    "gender": "Total"
+  },
+  {
+    "value": 1017,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 16,
+    "gender": "Total"
+  },
+  {
+    "value": 948,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 17,
+    "gender": "Total"
+  },
+  {
+    "value": 930,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 18,
+    "gender": "Total"
+  },
+  {
+    "value": 704,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 19,
+    "gender": "Total"
+  },
+  {
+    "value": 663,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 20,
+    "gender": "Total"
+  },
+  {
+    "value": 786,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 21,
+    "gender": "Total"
+  },
+  {
+    "value": 942,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 22,
+    "gender": "Total"
+  },
+  {
+    "value": 999,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 23,
+    "gender": "Total"
+  },
+  {
+    "value": 1117,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 24,
+    "gender": "Total"
+  },
+  {
+    "value": 1136,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 25,
+    "gender": "Total"
+  },
+  {
+    "value": 1236,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 26,
+    "gender": "Total"
+  },
+  {
+    "value": 1226,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 27,
+    "gender": "Total"
+  },
+  {
+    "value": 1306,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 28,
+    "gender": "Total"
+  },
+  {
+    "value": 1278,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 29,
+    "gender": "Total"
+  },
+  {
+    "value": 1234,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 30,
+    "gender": "Total"
+  },
+  {
+    "value": 1321,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 31,
+    "gender": "Total"
+  },
+  {
+    "value": 1363,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 32,
+    "gender": "Total"
+  },
+  {
+    "value": 1415,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 33,
+    "gender": "Total"
+  },
+  {
+    "value": 1370,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 34,
+    "gender": "Total"
+  },
+  {
+    "value": 1362,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 35,
+    "gender": "Total"
+  },
+  {
+    "value": 1392,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 36,
+    "gender": "Total"
+  },
+  {
+    "value": 1363,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 37,
+    "gender": "Total"
+  },
+  {
+    "value": 1290,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 38,
+    "gender": "Total"
+  },
+  {
+    "value": 1362,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 39,
+    "gender": "Total"
+  },
+  {
+    "value": 1254,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 40,
+    "gender": "Total"
+  },
+  {
+    "value": 1310,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 41,
+    "gender": "Total"
+  },
+  {
+    "value": 1251,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 42,
+    "gender": "Total"
+  },
+  {
+    "value": 1156,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 43,
+    "gender": "Total"
+  },
+  {
+    "value": 1047,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 44,
+    "gender": "Total"
+  },
+  {
+    "value": 1075,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 45,
+    "gender": "Total"
+  },
+  {
+    "value": 1077,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 46,
+    "gender": "Total"
+  },
+  {
+    "value": 1032,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 47,
+    "gender": "Total"
+  },
+  {
+    "value": 1008,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 48,
+    "gender": "Total"
+  },
+  {
+    "value": 1135,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 49,
+    "gender": "Total"
+  },
+  {
+    "value": 1126,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 50,
+    "gender": "Total"
+  },
+  {
+    "value": 1191,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 51,
+    "gender": "Total"
+  },
+  {
+    "value": 1174,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 52,
+    "gender": "Total"
+  },
+  {
+    "value": 1250,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 53,
+    "gender": "Total"
+  },
+  {
+    "value": 1206,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 54,
+    "gender": "Total"
+  },
+  {
+    "value": 1230,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 55,
+    "gender": "Total"
+  },
+  {
+    "value": 1293,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 56,
+    "gender": "Total"
+  },
+  {
+    "value": 1220,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 57,
+    "gender": "Total"
+  },
+  {
+    "value": 1207,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 58,
+    "gender": "Total"
+  },
+  {
+    "value": 1172,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 59,
+    "gender": "Total"
+  },
+  {
+    "value": 1156,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 60,
+    "gender": "Total"
+  },
+  {
+    "value": 995,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 61,
+    "gender": "Total"
+  },
+  {
+    "value": 983,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 62,
+    "gender": "Total"
+  },
+  {
+    "value": 1018,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 63,
+    "gender": "Total"
+  },
+  {
+    "value": 955,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 64,
+    "gender": "Total"
+  },
+  {
+    "value": 901,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 65,
+    "gender": "Total"
+  },
+  {
+    "value": 842,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 66,
+    "gender": "Total"
+  },
+  {
+    "value": 789,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 67,
+    "gender": "Total"
+  },
+  {
+    "value": 722,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 68,
+    "gender": "Total"
+  },
+  {
+    "value": 674,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 69,
+    "gender": "Total"
+  },
+  {
+    "value": 652,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 70,
+    "gender": "Total"
+  },
+  {
+    "value": 612,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 71,
+    "gender": "Total"
+  },
+  {
+    "value": 643,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 72,
+    "gender": "Total"
+  },
+  {
+    "value": 611,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 73,
+    "gender": "Total"
+  },
+  {
+    "value": 664,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 74,
+    "gender": "Total"
+  },
+  {
+    "value": 734,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 75,
+    "gender": "Total"
+  },
+  {
+    "value": 543,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 76,
+    "gender": "Total"
+  },
+  {
+    "value": 521,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 77,
+    "gender": "Total"
+  },
+  {
+    "value": 478,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 78,
+    "gender": "Total"
+  },
+  {
+    "value": 487,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 79,
+    "gender": "Total"
+  },
+  {
+    "value": 405,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 80,
+    "gender": "Total"
+  },
+  {
+    "value": 353,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 81,
+    "gender": "Total"
+  },
+  {
+    "value": 404,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 82,
+    "gender": "Total"
+  },
+  {
+    "value": 372,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 83,
+    "gender": "Total"
+  },
+  {
+    "value": 352,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 84,
+    "gender": "Total"
+  },
+  {
+    "value": 341,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 85,
+    "gender": "Total"
+  },
+  {
+    "value": 308,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 86,
+    "gender": "Total"
+  },
+  {
+    "value": 297,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 87,
+    "gender": "Total"
+  },
+  {
+    "value": 246,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 88,
+    "gender": "Total"
+  },
+  {
+    "value": 173,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 89,
+    "gender": "Total"
+  },
+  {
+    "value": 841,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2022-01-01",
+    "age": 90,
+    "gender": "Total"
+  },
+  {
+    "value": 1083,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 0,
+    "gender": "Total"
+  },
+  {
+    "value": 1081,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 1,
+    "gender": "Total"
+  },
+  {
+    "value": 1089,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 2,
+    "gender": "Total"
+  },
+  {
+    "value": 1101,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 3,
+    "gender": "Total"
+  },
+  {
+    "value": 1101,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 4,
+    "gender": "Total"
+  },
+  {
+    "value": 1182,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 5,
+    "gender": "Total"
+  },
+  {
+    "value": 1157,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 6,
+    "gender": "Total"
+  },
+  {
+    "value": 1186,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 7,
+    "gender": "Total"
+  },
+  {
+    "value": 1141,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 8,
+    "gender": "Total"
+  },
+  {
+    "value": 1166,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 9,
+    "gender": "Total"
+  },
+  {
+    "value": 1174,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 10,
+    "gender": "Total"
+  },
+  {
+    "value": 1206,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 11,
+    "gender": "Total"
+  },
+  {
+    "value": 1214,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 12,
+    "gender": "Total"
+  },
+  {
+    "value": 1166,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 13,
+    "gender": "Total"
+  },
+  {
+    "value": 1081,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 14,
+    "gender": "Total"
+  },
+  {
+    "value": 1130,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 15,
+    "gender": "Total"
+  },
+  {
+    "value": 1121,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 16,
+    "gender": "Total"
+  },
+  {
+    "value": 1001,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 17,
+    "gender": "Total"
+  },
+  {
+    "value": 904,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 18,
+    "gender": "Total"
+  },
+  {
+    "value": 710,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 19,
+    "gender": "Total"
+  },
+  {
+    "value": 696,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 20,
+    "gender": "Total"
+  },
+  {
+    "value": 777,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 21,
+    "gender": "Total"
+  },
+  {
+    "value": 869,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 22,
+    "gender": "Total"
+  },
+  {
+    "value": 1030,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 23,
+    "gender": "Total"
+  },
+  {
+    "value": 1063,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 24,
+    "gender": "Total"
+  },
+  {
+    "value": 1142,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 25,
+    "gender": "Total"
+  },
+  {
+    "value": 1164,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 26,
+    "gender": "Total"
+  },
+  {
+    "value": 1275,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 27,
+    "gender": "Total"
+  },
+  {
+    "value": 1241,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 28,
+    "gender": "Total"
+  },
+  {
+    "value": 1320,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 29,
+    "gender": "Total"
+  },
+  {
+    "value": 1275,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 30,
+    "gender": "Total"
+  },
+  {
+    "value": 1265,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 31,
+    "gender": "Total"
+  },
+  {
+    "value": 1338,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 32,
+    "gender": "Total"
+  },
+  {
+    "value": 1368,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 33,
+    "gender": "Total"
+  },
+  {
+    "value": 1391,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 34,
+    "gender": "Total"
+  },
+  {
+    "value": 1366,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 35,
+    "gender": "Total"
+  },
+  {
+    "value": 1363,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 36,
+    "gender": "Total"
+  },
+  {
+    "value": 1379,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 37,
+    "gender": "Total"
+  },
+  {
+    "value": 1362,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 38,
+    "gender": "Total"
+  },
+  {
+    "value": 1293,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 39,
+    "gender": "Total"
+  },
+  {
+    "value": 1351,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 40,
+    "gender": "Total"
+  },
+  {
+    "value": 1242,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 41,
+    "gender": "Total"
+  },
+  {
+    "value": 1287,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 42,
+    "gender": "Total"
+  },
+  {
+    "value": 1236,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 43,
+    "gender": "Total"
+  },
+  {
+    "value": 1158,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 44,
+    "gender": "Total"
+  },
+  {
+    "value": 1048,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 45,
+    "gender": "Total"
+  },
+  {
+    "value": 1058,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 46,
+    "gender": "Total"
+  },
+  {
+    "value": 1074,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 47,
+    "gender": "Total"
+  },
+  {
+    "value": 1034,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 48,
+    "gender": "Total"
+  },
+  {
+    "value": 1010,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 49,
+    "gender": "Total"
+  },
+  {
+    "value": 1136,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 50,
+    "gender": "Total"
+  },
+  {
+    "value": 1127,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 51,
+    "gender": "Total"
+  },
+  {
+    "value": 1179,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 52,
+    "gender": "Total"
+  },
+  {
+    "value": 1175,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 53,
+    "gender": "Total"
+  },
+  {
+    "value": 1239,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 54,
+    "gender": "Total"
+  },
+  {
+    "value": 1188,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 55,
+    "gender": "Total"
+  },
+  {
+    "value": 1204,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 56,
+    "gender": "Total"
+  },
+  {
+    "value": 1270,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 57,
+    "gender": "Total"
+  },
+  {
+    "value": 1192,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 58,
+    "gender": "Total"
+  },
+  {
+    "value": 1180,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 59,
+    "gender": "Total"
+  },
+  {
+    "value": 1151,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 60,
+    "gender": "Total"
+  },
+  {
+    "value": 1129,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 61,
+    "gender": "Total"
+  },
+  {
+    "value": 973,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 62,
+    "gender": "Total"
+  },
+  {
+    "value": 973,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 63,
+    "gender": "Total"
+  },
+  {
+    "value": 995,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 64,
+    "gender": "Total"
+  },
+  {
+    "value": 932,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 65,
+    "gender": "Total"
+  },
+  {
+    "value": 877,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 66,
+    "gender": "Total"
+  },
+  {
+    "value": 822,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 67,
+    "gender": "Total"
+  },
+  {
+    "value": 766,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 68,
+    "gender": "Total"
+  },
+  {
+    "value": 705,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 69,
+    "gender": "Total"
+  },
+  {
+    "value": 650,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 70,
+    "gender": "Total"
+  },
+  {
+    "value": 631,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 71,
+    "gender": "Total"
+  },
+  {
+    "value": 598,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 72,
+    "gender": "Total"
+  },
+  {
+    "value": 626,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 73,
+    "gender": "Total"
+  },
+  {
+    "value": 588,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 74,
+    "gender": "Total"
+  },
+  {
+    "value": 648,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 75,
+    "gender": "Total"
+  },
+  {
+    "value": 709,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 76,
+    "gender": "Total"
+  },
+  {
+    "value": 526,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 77,
+    "gender": "Total"
+  },
+  {
+    "value": 498,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 78,
+    "gender": "Total"
+  },
+  {
+    "value": 461,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 79,
+    "gender": "Total"
+  },
+  {
+    "value": 467,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 80,
+    "gender": "Total"
+  },
+  {
+    "value": 390,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 81,
+    "gender": "Total"
+  },
+  {
+    "value": 338,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 82,
+    "gender": "Total"
+  },
+  {
+    "value": 383,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 83,
+    "gender": "Total"
+  },
+  {
+    "value": 352,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 84,
+    "gender": "Total"
+  },
+  {
+    "value": 326,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 85,
+    "gender": "Total"
+  },
+  {
+    "value": 312,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 86,
+    "gender": "Total"
+  },
+  {
+    "value": 276,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 87,
+    "gender": "Total"
+  },
+  {
+    "value": 266,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 88,
+    "gender": "Total"
+  },
+  {
+    "value": 220,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 89,
+    "gender": "Total"
+  },
+  {
+    "value": 828,
+    "code": "E07000243",
+    "type": "lad",
+    "date": "2023-01-01",
+    "age": 90,
+    "gender": "Total"
+  }
+]
