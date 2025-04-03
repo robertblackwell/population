@@ -15,22 +15,22 @@ import (
 // Checks that the year number is in the range 2018 .. 2023
 //
 // panics on error
-func PastYearFromDate(dateStr string) PastYear {
+func YearFromDate(dateStr string) Year {
 	bits := strings.Split(dateStr, "-")
 	if len(bits) != 3 {
-		fmt.Printf("PastYearFromDate %s\n", dateStr)
-		panic("PastYearFromDate failed")
+		fmt.Printf("YearFromDate %s\n", dateStr)
+		panic("YearFromDate failed")
 	}
 	y := bits[0]
 	if ynum, ok := strconv.Atoi(y); ok == nil {
-		if ynum >= 2018 && ynum <= 2023 {
-			return PastYear(ynum)
+		if ynum >= 2018 && ynum <= 2035 {
+			return Year(ynum)
 		} else {
-			fmt.Printf("PastYearFromDate %d\n", ynum)
-			panic("PastYearFromDate out of range failed")
+			fmt.Printf("YearFromDate %d\n", ynum)
+			panic("YearFromDate out of range failed")
 		}
 	} else {
-		panic("PastYearFromDate Atoi failed")
+		panic("YearFromDate Atoi failed")
 	}
 }
 
@@ -43,7 +43,7 @@ func SortedMapKeys[T any](m map[string]T) []string {
 }
 
 // Load Population projection data into an instance of type PopulationProjectionInputData
-func PopulationForecastInputData_LoadFromFile(fileName string) PopulationForecastInputData {
+func PopulationForecastInputData_LoadFromFile(fileName string, minAge int, maxAge int) PopulationForecastInputData {
 	b, err := os.ReadFile(fileName)
 	if err != nil {
 		panic("failed to open file")
@@ -69,12 +69,14 @@ func PopulationForecastInputData_LoadFromFile(fileName string) PopulationForecas
 	for _, k := range sortedKeys {
 		v, ok := byYear[k]
 		if ok {
-			ytmp := PastYearFromDate(k)
-			yearData := YearPopulationProjection_CreateEmpty(PastYear(ytmp))
+			ytmp := YearFromDate(k)
+			yearData := YearPopulationProjection_CreateEmpty(Year(ytmp))
 			fmt.Printf("k: %s v: \n", k)
 			for _, r := range v {
 				fmt.Printf("\t %v \n", r)
-				yearData.AddYearAge(ytmp, r.Age, r.Value)
+				if r.Age >= minAge && r.Age <= maxAge {
+					yearData.AddYearAge(ytmp, r.Age, r.Value)
+				}
 				// tmp := YearAgePopulationProjection{
 				// 	year:            int(ytmp),
 				// 	age:             r.Age,

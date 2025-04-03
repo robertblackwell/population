@@ -7,29 +7,25 @@ import (
 	"sort"
 )
 
-type PastYear int
+// Years are the years for which population forcasts have been made and from which we will build
+// a population forecasting model. Currently they are 2018 .. 2035
+type Year int
 
 const FirstPastYear = 2018
-const LastPastYear = 2023
+const LastPastYear = 2035
 
-func IsValidPastYear(y int) bool {
-	return y >= 2018 && y <= 2023
+func IsValidYear(y int) bool {
+	return y >= 2018 && y <= 2035
 }
-func PastYearFromInt(y int) PastYear {
-	if IsValidPastYear(y) {
-		return PastYear(y)
+func YearFromInt(y int) Year {
+	if IsValidYear(y) {
+		return Year(y)
 	}
-	panic(fmt.Sprintf("PastYearFromInt y: %d", y))
+	panic(fmt.Sprintf("YearFromInt y: %d", y))
 }
 
-type FutureYear int
-
-func IsValidFutureYear(y FutureYear) bool {
-	return y >= 2024
-}
-
-func FirstFutureYear() FutureYear { return 2024 }
-
+// Our test data has only total population by age and year. Eventually we will want to split that into
+// population by female and male .. these types are prep for that
 type PopulationType string
 
 type Gender string
@@ -39,6 +35,8 @@ const (
 	Male   Gender = "male"
 )
 
+// Beginning of the data structures that define our population model. Holds a projected population for a single age
+// and a single year `year-01-01“
 type YearAgePopulationProjection struct {
 	year            int // 2018 .. 2023
 	age             int // >= 0
@@ -47,8 +45,9 @@ type YearAgePopulationProjection struct {
 	// female_population int // > 0 .. unused at this time not in population_projections_v2
 }
 
+// This structure holds projected population for a given age over all PastYears
 type YearPopulationProjection struct {
-	year     int // 2018 .. 2023
+	year     int // 2018 .. 2035
 	maxAge   int
 	popByAge []YearAgePopulationProjection
 	/*
@@ -58,14 +57,17 @@ type YearPopulationProjection struct {
 	 */
 }
 
-func YearPopulationProjection_CreateEmpty(pastYear PastYear) YearPopulationProjection {
+// Create an empty YearPopulationProjection structure
+func YearPopulationProjection_CreateEmpty(pastYear Year) YearPopulationProjection {
 	return YearPopulationProjection{
 		year:     int(pastYear),
 		maxAge:   0,
 		popByAge: make([]YearAgePopulationProjection, 0),
 	}
 }
-func (y *YearPopulationProjection) AddYearAge(pastYear PastYear, age int, popValue int) {
+
+// Adds another population value for a PastYear and Age to an existing YearPopulationProjection structure
+func (y *YearPopulationProjection) AddYearAge(pastYear Year, age int, popValue int) {
 	tmp := YearAgePopulationProjection{
 		year:            int(pastYear),
 		age:             age,
@@ -98,7 +100,7 @@ func (pfid *PopulationForecastInputData) AddYearData(yearData YearPopulationProj
 }
 
 // Get the population forecast for one of the years between 2018 and 2023 inclusive
-func (pfid *PopulationForecastInputData) GetPopulationByYearAndAge(year PastYear, age int) int {
+func (pfid *PopulationForecastInputData) GetPopulationByYearAndAge(year Year, age int) int {
 	year_index := int(year) - int(FirstPastYear)
 	pop := pfid.projectionByYear[year_index].popByAge[age].totalPopulation
 	return pop
@@ -110,8 +112,8 @@ func (pfid *PopulationForecastInputData) GetPopulationByYearAndAge(year PastYear
 func (pfid *PopulationForecastInputData) AnnualizedGrowthRatesByAge(age int) []float64 {
 	result := make([]float64, 0)
 	for y := 1; y <= LastPastYear-FirstPastYear; y++ {
-		pop2 := pfid.GetPopulationByYearAndAge(PastYear(FirstPastYear+y), age)
-		pop1 := pfid.GetPopulationByYearAndAge(PastYear(FirstPastYear+y-1), age)
+		pop2 := pfid.GetPopulationByYearAndAge(Year(FirstPastYear+y), age)
+		pop1 := pfid.GetPopulationByYearAndAge(Year(FirstPastYear+y-1), age)
 		gr := float64(pop2) / float64(pop1)
 		fmt.Printf("pop2: %d pop1: %d  gr: %f\n", pop2, pop1, gr)
 		result = append(result, gr)
@@ -131,7 +133,7 @@ type BasicPopulationForecast struct {
 // Returns a slice where eachelement is a year and its corresponding population
 func (pfid *PopulationForecastInputData) ForecastPopulationByAgeAndNumberofYears(age int, nbr_years int, pop_in_2023 int) []BasicPopulationForecast {
 	gr := pfid.AnnualizedGrowthRatesByAge(age)
-	result := make([]BasicPopulationForecast, 0)
+	result := make([]BasicPopulationForecast, 0, nbr_years) // nbr_years will save memory allocation and copy
 	counter := 0
 	latest_pop := pop_in_2023
 	// apply the growth rates successively until we have used them all
@@ -160,7 +162,7 @@ func (pfid *PopulationForecastInputData) ForecastPopulationByAgeToHorizon(age in
 	sort.Ints(horizons)
 	nbrOfYears := horizons[len(horizons)-1] - LastPastYear
 	r := pfid.ForecastPopulationByAgeAndNumberofYears(age, nbrOfYears, pop_in_2023)
-	result := make([]BasicPopulationForecast, 0)
+	result := make([]BasicPopulationForecast, 0, len(horizons))
 	for _, f := range r {
 		y := f.year
 		if slices.Contains(horizons, y) {
