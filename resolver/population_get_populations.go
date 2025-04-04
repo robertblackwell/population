@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"forecast_model/mockdb"
+	"maps"
 	"slices"
 )
 
@@ -52,64 +53,32 @@ func GetAllProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, minAg
 	valid_age_range := IsValidAge(minAge) && IsValidAge(maxAge) && minAge < maxAge
 	map_result := make(map[string][]LadPopulationProjection, 0)
 	if !valid_age_range {
-		return map_result, fmt.Errorf("invalid age range %d %d", minAge, maxAge)
+		return map_result, errors.New("invalid age range")
 	}
-	age_range_string := fmt.Sprintf("%d-%d", minAge, maxAge)
-	var byYear map[string][]mockdb.JsonRecord = make(map[string][]mockdb.JsonRecord, 1)
-	fmt.Println("Json marshall complete", len(target))
-
-	for _, kv := range codes {
-
-		code_target, ok := target[kv]
-		if !ok {
-			return map_result, fmt.Errorf("could not find codes %s in json database", kv)
-		}
-
-		_, b := map_result[kv]
-		if !b {
-			map_result[kv] = make([]LadPopulationProjection, 0)
-		}
-
-		for _, v := range code_target {
-			// fmt.Printf("k: %d v: %v\n", k, v)
-			_, ok := byYear[v.Date]
-			if !ok {
-				byYear[v.Date] = make([]mockdb.JsonRecord, 0)
-				byYear[v.Date] = append(byYear[v.Date], v)
-			} else {
-				byYear[v.Date] = append(byYear[v.Date], v)
-			}
-		}
-		sortedKeys := SortedMapKeys(byYear)
-
-		for _, k := range sortedKeys {
-			v, ok := byYear[k]
-			if ok {
-				ytmp := YearFromDate(k)
-				fmt.Printf("k: %s v: \n", k)
-				pop := 0
-				for _, r := range v {
-					fmt.Printf("\t %v \n", r)
-					if r.Age >= minAge && r.Age <= maxAge {
-						pop = pop + r.Value
-					}
-					// tmp := YearAgePopulationProjection{
-					// 	year:            int(ytmp),
-					// 	age:             r.Age,
-					// 	totalPopulation: r.Value,
-					// }
-					// if r.Age > yage.maxAge {
-					// 	yage.maxAge = r.Age
-					// }
-					// yage.popByAge = append(yage.popByAge, tmp)
+	ageRangeString := fmt.Sprintf("%d-%d", minAge, maxAge)
+	fmt.Printf("Iam here")
+	for k1, v1 := range target {
+		if slices.Contains(codes, k1) {
+			keys := slices.Sorted(maps.Keys(v1))
+			for _, k2 := range keys {
+				v2 := v1[k2]
+				var p = LadPopulationProjection{
+					Code: k1, Type: v2[0].Type, AgeRange: ageRangeString, Year: int(YearFromDate(k2)), TotalPopulation: 0,
 				}
-				pp := LadPopulationProjection{Code: codes[0], Type: v[0].Type, TotalPopulation: pop, Year: int(ytmp), AgeRange: age_range_string}
-				map_result[kv] = append(map_result[kv], pp)
-			} else {
-				panic("something went wrong")
+				for _, j := range v2 {
+					if j.Age >= minAge && j.Age <= maxAge {
+						p.TotalPopulation = p.TotalPopulation + j.Value
+					}
+				}
+				_, ok := map_result[k1]
+				if !ok {
+					map_result[k1] = make([]LadPopulationProjection, 0)
+				}
+				map_result[k1] = append(map_result[k1], p)
 			}
 		}
 	}
+	fmt.Printf("I am here again")
 	return map_result, nil
 }
 
@@ -126,61 +95,29 @@ func GetProjectedPopulationByCodes(ctx mockdb.Context, codes []string, startYear
 	if !valid_age_range {
 		return map_result, errors.New("invalid age range")
 	}
-	age_range_string := fmt.Sprintf("%d-%d", minAge, maxAge)
-	var byYear map[string][]mockdb.JsonRecord = make(map[string][]mockdb.JsonRecord, 1)
-	fmt.Println("Json marshall complete", len(target))
-
-	for _, kv := range codes {
-
-		code_target, ok := target[kv]
-		if !ok {
-			return map_result, fmt.Errorf("could not find codes %s in json database", kv)
-		}
-
-		_, b := map_result[kv]
-		if !b {
-			map_result[kv] = make([]LadPopulationProjection, 0)
-		}
-
-		for _, v := range code_target {
-			// fmt.Printf("k: %d v: %v\n", k, v)
-			_, ok := byYear[v.Date]
-			if !ok {
-				byYear[v.Date] = make([]mockdb.JsonRecord, 0)
-				byYear[v.Date] = append(byYear[v.Date], v)
-			} else {
-				byYear[v.Date] = append(byYear[v.Date], v)
-			}
-		}
-		sortedKeys := SortedMapKeys(byYear)
-
-		for _, k := range sortedKeys {
-			v, ok := byYear[k]
-			if ok {
-				ytmp := YearFromDate(k)
-				fmt.Printf("k: %s v: \n", k)
-				pop := 0
-				for _, r := range v {
-					fmt.Printf("\t %v \n", r)
-					if r.Age >= minAge && r.Age <= maxAge {
-						pop = pop + r.Value
-					}
-					// tmp := YearAgePopulationProjection{
-					// 	year:            int(ytmp),
-					// 	age:             r.Age,
-					// 	totalPopulation: r.Value,
-					// }
-					// if r.Age > yage.maxAge {
-					// 	yage.maxAge = r.Age
-					// }
-					// yage.popByAge = append(yage.popByAge, tmp)
+	ageRangeString := fmt.Sprintf("%d-%d", minAge, maxAge)
+	fmt.Printf("Iam here")
+	for k1, v1 := range target {
+		if slices.Contains(codes, k1) {
+			keys := slices.Sorted(maps.Keys(v1))
+			for _, k2 := range keys {
+				v2 := v1[k2]
+				var p = LadPopulationProjection{
+					Code: k1, Type: v2[0].Type, AgeRange: ageRangeString, Year: int(YearFromDate(k2)), TotalPopulation: 0,
 				}
-				pp := LadPopulationProjection{Code: codes[0], Type: v[0].Type, TotalPopulation: pop, Year: int(ytmp), AgeRange: age_range_string}
-				map_result[kv] = append(map_result[kv], pp)
-			} else {
-				panic("something went wrong")
+				for _, j := range v2 {
+					if j.Age >= minAge && j.Age <= maxAge {
+						p.TotalPopulation = p.TotalPopulation + j.Value
+					}
+				}
+				_, ok := map_result[k1]
+				if !ok {
+					map_result[k1] = make([]LadPopulationProjection, 0)
+				}
+				map_result[k1] = append(map_result[k1], p)
 			}
 		}
 	}
+	fmt.Printf("I am here again")
 	return map_result, nil
 }

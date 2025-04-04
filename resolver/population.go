@@ -23,6 +23,16 @@ type LadPopulationProjection struct {
 	Year            int    `db:"year"`
 }
 
+type GrowthRate = struct {
+	Year             int
+	RateFromBaseYear float64
+}
+
+type EstimatedPopulation = struct {
+	Year       int
+	Population int
+}
+
 type PopVec []LadPopulationProjection
 
 // validates that a population slice is internally consistent
@@ -48,16 +58,6 @@ func IsValidMapOfPopVec(mp MapOfPopVec) bool {
 		}
 	}
 	return true
-}
-
-type GrowthRate = struct {
-	Year             int
-	RateFromBaseYear float64
-}
-
-type EstimatedPopulation = struct {
-	Year       int
-	Population int
 }
 
 // Apply growth rates to a population for the base year. Do this for a number of codes.

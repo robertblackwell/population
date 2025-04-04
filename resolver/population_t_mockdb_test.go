@@ -1,7 +1,6 @@
 package resolver
 
 import (
-	"fmt"
 	"forecast_model/mockdb"
 	"testing"
 
@@ -14,8 +13,11 @@ func TestGetProjectedPopulation(t *testing.T) {
 	if ok != nil {
 		return
 	}
-	assert.True(t, IsValidMapOfPopVec(z))
-	fmt.Printf("%v\n", m)
+	assert.Equal(t, len(m["E06000002"]), (2035 - 2018 + 1))
+	iv := IsValidMapOfPopVec(m)
+	assert.True(t, iv)
+	assert.True(t, IsValidMapOfPopVec(m))
+	// fmt.Printf("%v\n", m)
 }
 func TestGetAllProjectedPopulation(t *testing.T) {
 	ctx := mockdb.Context{}
@@ -24,6 +26,9 @@ func TestGetAllProjectedPopulation(t *testing.T) {
 	if ok != nil {
 		return
 	}
+	assert.Equal(t, len(m["E06000002"]), (2035 - 2018 + 1))
+	iv := IsValidMapOfPopVec(m)
+	assert.True(t, iv)
 	assert.True(t, IsValidMapOfPopVec(m))
-	fmt.Printf("%v\n", m)
+	// fmt.Printf("%v\n", m)
 }

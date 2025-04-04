@@ -5,6 +5,33 @@ import (
 	"fmt"
 )
 
+// projected_pops - the key is a Code and the values must be valid PopVecs
+// baseYear       - the key is a Code (same as projected_pop) and the value is a LapopulationProjection - all values must have the same year - 2023
+func CalculateGrowthRatesRelativeToBaseYearMultipleCodes(projected_pops map[string][]LadPopulationProjection, baseYear map[string]LadPopulationProjection) map[string][]GrowthRate {
+	result := make(map[string][]GrowthRate, 0)
+	for k, v := range projected_pops {
+		gr := CalculateGrowthRatesRelativeToBaseYear(v, baseYear[k])
+		result[k] = gr
+	}
+	return result
+}
+
+// This is a better interface as the need for a baseYear and a population for the baseYear is explicit
+func CalculateGrowthRatesRelativeToBaseYear(projected_pops []LadPopulationProjection, baseYear LadPopulationProjection) []GrowthRate {
+	growthRates := make([]GrowthRate, 0)
+	for _, pp := range projected_pops {
+		var gr float64
+		if baseYear.Year == pp.Year {
+			gr = 1.0
+		} else {
+			gr = float64(pp.TotalPopulation) / float64(baseYear.TotalPopulation)
+		}
+		growthRates = append(growthRates, GrowthRate{Year: pp.Year, RateFromBaseYear: gr})
+	}
+	return growthRates
+
+}
+
 // Calculates the growth rates from the data in the projected_populations_v2 table
 // For each code a separate calculation is performed.
 // The returned map is indexed by code and the value for a code is a slice/array of LaPopulationProjection object
@@ -43,21 +70,6 @@ func CalculateGrowthRatesAllYears(projected_pops []LadPopulationProjection, base
 	// 	growthRates = append(growthRates, GrowthRate{Year: pp.Year, RateFromBaseYear: p})
 	// }
 	// return growthRates
-}
-
-func CalculateGrowthRatesRelativeToBaseYear(projected_pops []LadPopulationProjection, baseYear LadPopulationProjection) []GrowthRate {
-	growthRates := make([]GrowthRate, 0)
-	for _, pp := range projected_pops {
-		var p float64
-		if baseYear.Year == pp.Year {
-			p = 1.0
-		} else {
-			p = float64(pp.TotalPopulation) / float64(baseYear.TotalPopulation)
-		}
-		growthRates = append(growthRates, GrowthRate{Year: pp.Year, RateFromBaseYear: p})
-	}
-	return growthRates
-
 }
 
 func findBaseYearIndexInPopulationProjectsions(pop_projections []LadPopulationProjection, base_year int) (int, error) {
