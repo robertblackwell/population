@@ -4,28 +4,12 @@ import (
 	"fmt"
 	"forecast_model/mockdb"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-func TestGetProjectedPopulation(t *testing.T) {
-	ctx := mockdb.Context{}
-	z, ok := GetProjectedPopulationByCodes(ctx, []string{"E06000002", "E06000003"}, 2020, 2, 40, 42, 3, true)
-	if ok != nil {
-		return
-	}
-	fmt.Printf("%v\n", z)
-}
-func TestGetAllProjectedPopulation(t *testing.T) {
-	ctx := mockdb.Context{}
-	z, ok := GetAllProjectedPopulationsByCodes(ctx, []string{"E06000002", "E06000003"}, 40, 42)
-	// x, err := mockdb.GetProjectedPopulationByCodes(mockdb.Context{}, []string{"XX", "YY"}, 2020, 2, 40, 42, 3, true)
-	if ok != nil {
-		return
-	}
-	fmt.Printf("%v\n", z)
-}
-
-// Test that we can get back the projected_population values by setting the base years population to its projected value
-// this is a good sanity check.
+// Test that forecast populations are the same as projected populations when the base year starting population
+// is equal to its projected population
 func TestSingleCodeVerify(t *testing.T) {
 	ctx := mockdb.Context{}
 	code := "E06000002"
@@ -33,7 +17,9 @@ func TestSingleCodeVerify(t *testing.T) {
 	if ok != nil {
 		t.Errorf("GetAllProjectedPopulationByCode failed")
 	}
-	rates := GrowthRatesAllYears(projected_pops[code], 2023)
+	assert.True(t, IsValidMapOfPopVec(projected_pops))
+
+	rates := CalculateGrowthRatesAllYears(projected_pops[code], 2023)
 	years := make([]int, 0)
 	for i := 2018; i <= 2035; i++ {
 		years = append(years, i)
@@ -62,15 +48,21 @@ func TestGetBackTheProjections(t *testing.T) {
 	projected_pops, ok := GetAllProjectedPopulationsByCodes(ctx, []string{"E06000002"}, 40, 42)
 	// x, err := mockdb.GetProjectedPopulationByCodes(mockdb.Context{}, []string{"XX", "YY"}, 2020, 2, 40, 42, 3, true)
 	if ok != nil {
-		return
+		t.Errorf("get all projected pops failed")
 	}
-	rates := GrowthRatesAllYearsMultipleCodes(projected_pops, 2023)
-	years := make([]int, 0)
+	baseYearPops, e := GetProjectedPopulationsByCodeForBaseYear(ctx, []string{"E06000002"}, 2023, 40, 42)
+	if e != nil {
+		t.Errorf("get baseYear projected pops failed")
+	}
+	fmt.Printf("%v\n", baseYearPops)
+	rates := CalculateGrowthRatesAllYearsMultipleCodes(projected_pops, 2023)
+	allYears := make([]int, 0)
 	for i := 2018; i <= 2035; i++ {
-		years = append(years, i)
+		allYears = append(allYears, i)
 	}
-	baseYearPopulation := map[string]int{code: 3880}
-	pops, ok := CalculateEstimatedPopulationsForSomeYearsMultipleCodes(rates, baseYearPopulation, years)
+	tmp := baseYearPops[code].TotalPopulation
+	baseYearPopulation := map[string]int{code: tmp}
+	pops, ok := CalculateEstimatedPopulationsForSomeYearsMultipleCodes(rates, baseYearPopulation, allYears)
 	if ok != nil {
 		t.Errorf("%v", ok)
 	}
@@ -81,4 +73,19 @@ func TestGetBackTheProjections(t *testing.T) {
 			t.Errorf("Failed code:%s ix: %d year: %d pop1: %d pop2:%d", code, ix, el.Year, el.TotalPopulation, pops[code][ix].Population)
 		}
 	}
+}
+func Test01(t *testing.T) {
+	projectedPops := []LadPopulationProjection{
+		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020},
+		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 2000, Year: 2030},
+	}
+	baseYearPop := LadPopulationProjection{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1500, Year: 2023}
+
+	gr := CalculateGrowthRatesRelativeToBaseYear(projectedPops, baseYearPop)
+	estimated_pop := CalculateEstimatedPopulationsForSomeYears(gr, 1500, []int{2020, 2030})
+
+	assert.Equal(t, estimated_pop[0].Population, projectedPops[0].TotalPopulation, "2020 populations are the same")
+	assert.Equal(t, estimated_pop[1].Population, projectedPops[1].TotalPopulation, "2030 populations are the same")
+	fmt.Printf("%v\n", estimated_pop)
+
 }
