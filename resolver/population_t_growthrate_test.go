@@ -132,7 +132,6 @@ func TestBaseCaseExplicitData(t *testing.T) {
 	// do not have fields for Code, Type, AgeRange but the common const values in
 	// the variables of type []LadPopulationProjection
 	//
-
 	// this is a mockup of data from a database query where includeIntermediates == false
 	projectedPopsNoIntermediates := []LadPopulationProjection{
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020},
@@ -168,10 +167,8 @@ func TestBaseCaseExplicitData(t *testing.T) {
 	assert.True(t, IsValidPopVec(projectedPopsWithIntermediates))
 
 	baseYearPop := LadPopulationProjection{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1500, Year: 2023}
-
 	gr := CalculateGrowthRatesBaseCase(projectedPopsNoIntermediates, baseYearPop)
 	estimatedPopsNoIntermediates := CalculateEstimatedPopulationsForSomeYears(gr, baseYearPop.TotalPopulation)
-
 	// without intermediaries the estimated population calculated using growth rates
 	// are the same as the projected population values
 	assert.Equal(t, estimatedPopsNoIntermediates[0].Population, projectedPopsNoIntermediates[0].TotalPopulation, "2020 populations are the same")
@@ -179,7 +176,6 @@ func TestBaseCaseExplicitData(t *testing.T) {
 
 	gr2 := CalculateGrowthRatesBaseCase(projectedPopsWithIntermediates, baseYearPop)
 	estimatedPopsWithIntermediates := CalculateEstimatedPopulationsForSomeYears(gr2, baseYearPop.TotalPopulation)
-
 	// with intermediaries the estimated populations calculated using growth rates
 	// are the same as the projected population values
 	assert.True(t, len(estimatedPopsWithIntermediates) == len(projectedPopsWithIntermediates))
@@ -191,11 +187,4 @@ func TestBaseCaseExplicitData(t *testing.T) {
 	// Warning: determined the matching indices manually
 	assert.Equal(t, estimatedPopsWithIntermediates[2].Population, estimatedPopsNoIntermediates[0].Population, "2020 populations are the same")
 	assert.Equal(t, estimatedPopsWithIntermediates[12].Population, estimatedPopsNoIntermediates[1].Population, "2030 populations are the same")
-
-	// historical junk
-	// gr3 := CalculateGrowthRatesBaseCase(projectedPopsWithIntermediates, baseYearPop)
-	// estimated_pop3 := CalculateEstimatedPopulationsForSomeYears(gr3, baseYearPop.TotalPopulation)
-	// assert.Equal(t, estimated_pop3[2].Population, estimatedPopsNoIntermediates[0].Population, "2020 populations are the same")
-	// assert.Equal(t, estimated_pop3[12].Population, estimatedPopsNoIntermediates[1].Population, "2030 populations are the same")
-	// fmt.Printf("%v\n", estimatedPopsNoIntermediates)
 }
