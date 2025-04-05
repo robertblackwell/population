@@ -182,7 +182,6 @@ func TestBaseCaseExplicitData(t *testing.T) {
 	for ix := range estimatedPopsWithIntermediates {
 		assert.Equal(t, estimatedPopsWithIntermediates[ix].Population, projectedPopsWithIntermediates[ix].TotalPopulation, "2020 populations are the same")
 	}
-
 	// finally the results for the years 2020 and 2030 are the same with or with out intermediaries
 	// Warning: determined the matching indices manually
 	assert.Equal(t, estimatedPopsWithIntermediates[2].Population, estimatedPopsNoIntermediates[0].Population, "2020 populations are the same")
