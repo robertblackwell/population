@@ -137,7 +137,7 @@ func TestBaseCaseExplicitData(t *testing.T) {
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 2000, Year: 2030},
 	}
-	// this verifies thatCode, Type, AgeRange fields all have the same value
+	// this verifies that Code, Type, AgeRange fields all have the same value
 	// that is a prerequisite for growth and estimated population calculations
 	assert.True(t, IsValidPopVec(projectedPopsNoIntermediates))
 
@@ -162,7 +162,7 @@ func TestBaseCaseExplicitData(t *testing.T) {
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1870, Year: 2034},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1860, Year: 2035},
 	}
-	// this verifies thatCode, Type, AgeRange fields all have the same value
+	// this verifies that Code, Type, AgeRange fields all have the same value
 	// that is a prerequisite for growth and estimated population calculations
 	assert.True(t, IsValidPopVec(projectedPopsWithIntermediates))
 
