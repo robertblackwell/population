@@ -2,6 +2,7 @@ package resolver
 
 import (
 	"fmt"
+	"math"
 )
 
 // projected_pops - the key is a Code and the values must be valid PopVecs
@@ -12,6 +13,16 @@ func CalculateGrowthRates(projected_pops MapsOfPopVecs, baseYear map[string]map[
 		for ageRange, v2 := range v1 {
 			gr := CalculateGrowthRatesBaseCase(v2, baseYear[code][ageRange])
 			result[code] = map[string][]GrowthRate{ageRange: gr}
+		}
+	}
+	return result
+}
+func CalculateGrowthRatesAsFloats(projected_pops MapsOfPopVecs, baseYear map[string]map[string]LadPopulationProjection) map[string]map[string][]float64 {
+	result := make(map[string]map[string][]float64, 0)
+	for code, v1 := range projected_pops {
+		for ageRange, v2 := range v1 {
+			gr := CalculateGrowthRatesAsFloatsBaseCase(v2, baseYear[code][ageRange])
+			result[code] = map[string][]float64{ageRange: gr}
 		}
 	}
 	return result
@@ -31,6 +42,66 @@ func CalculateGrowthRatesBaseCase(projected_pops []LadPopulationProjection, base
 	}
 	return growthRates
 
+}
+
+// This is a better interface as the need for a baseYear and a population for the baseYear is explicit
+func CalculateGrowthRatesAsFloatsBaseCase(projected_pops []LadPopulationProjection, baseYear LadPopulationProjection) []float64 {
+	growthRates := make([]float64, 0)
+	for _, pp := range projected_pops {
+		var gr float64
+		if baseYear.Year == pp.Year {
+			gr = 1.0
+		} else {
+			gr = float64(pp.TotalPopulation) / float64(baseYear.TotalPopulation)
+		}
+		growthRates = append(growthRates, gr)
+	}
+	return growthRates
+
+}
+
+// Apply growth rates to a population for the base year. Do this for a number of codes.
+// Filter the output so that the returned value only has forrecast populations for the specified list of years (between FirstYear and LastYear)
+func CalculateEstimatedPopulationsFromInts(growthRates MapsOfGrowthRates, baseYearPopulation map[string]map[string]int) (MapsOfEstimatedPopulations, error) {
+	result := make(map[string]map[string][]EstimatedPopulation, 0)
+	for code, v1 := range growthRates {
+		for ageRange, v2 := range v1 {
+			basePop, ok := baseYearPopulation[code][ageRange]
+			if !ok {
+				return result, fmt.Errorf("a base year population was not provided for code: %s", code)
+			}
+			ep := CalculateEstimatedPopulationsBaseCase(v2, basePop)
+			result[code][ageRange] = ep
+		}
+	}
+	return result, nil
+}
+func CalculateEstimatedPopulations(growthRates MapsOfGrowthRates, baseYearPopulation map[string]map[string]LadPopulationProjection) (MapsOfEstimatedPopulations, error) {
+	result := make(map[string]map[string][]EstimatedPopulation, 0)
+	for code, v1 := range growthRates {
+		for ageRange, v2 := range v1 {
+			basePop, ok := baseYearPopulation[code][ageRange]
+			if !ok {
+				return result, fmt.Errorf("a base year population was not provided for code: %s", code)
+			}
+			ep := CalculateEstimatedPopulationsBaseCase(v2, basePop.TotalPopulation)
+			result[code][ageRange] = ep
+		}
+	}
+	return result, nil
+}
+
+// For a single code
+// Apply growth rates to the baseYear population to get population forecasts.
+// Then filter the result to get population forecasts for the years of interest/requiredYears
+func CalculateEstimatedPopulationsBaseCase(growthRates []GrowthRate, baseYearPopulation int) []EstimatedPopulation {
+
+	result := make([]EstimatedPopulation, 0)
+	for _, gr := range growthRates {
+		p := int(math.Round(float64(baseYearPopulation) * gr.RateFromBaseYear))
+		result = append(result, EstimatedPopulation{Year: gr.Year, Population: p})
+	}
+	return result
 }
 
 // // Calculates the growth rates from the data in the projected_populations_v2 table

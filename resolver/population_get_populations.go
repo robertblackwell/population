@@ -7,18 +7,15 @@ import (
 	"slices"
 )
 
-// // Get the base year projected population for a list of codes
-// func GetProjectedPopulationsByCodeForBaseYear(ctx mockdb.Context, codes []string, baseYear int, minAge int, maxAge int) (map[string]LadPopulationProjection, error) {
-//     result := make(map[string]LadPopulationProjection, 0)
-//     asSlice, e := GetProjectedPopulationsByCodeForYears(ctx, codes, []int{baseYear}, minAge, maxAge)
-//     if e != nil {
-//         return result, e
-//     }
-//     for k, v := range asSlice {
-//         result[k] = v[0]
-//     }
-//     return result, nil
-// }
+func GetParentCodes(ctx mockdb.Context, ladCode string) ([]string, error) {
+	return []string{ladCode}, nil
+}
+func GetCurrentPopulationsByCodes(ctx mockdb.Context, parents []string, rangeSize int, minAge int, maxAge int, currentPopulationYear int) ([]LadPopulationProjection, error) {
+	return []LadPopulationProjection{}, nil
+}
+func GetPopulationByCodes(ctx mockdb.Context, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) ([]LadPopulationProjection, error) {
+	return GetProjectedPopulationsByCodes(ctx, codes, startYear, rangeSize, minAge, maxAge, futureOffset, includeIntermediates)
+}
 
 // This is a mock version of a function written for test purposes.
 //
@@ -119,6 +116,16 @@ func CollateProjectedPopulationsByCode(pops []LadPopulationProjection) map[strin
 	}
 	return result
 }
+func CollateBaseYearProjectedPopulationsByCode(pops []LadPopulationProjection) (map[string]map[string]LadPopulationProjection, error) {
+	result := map[string]map[string]LadPopulationProjection{}
+	for _, v := range pops {
+		result, err := z_append(result, v)
+		if err != nil {
+			return result, err
+		}
+	}
+	return result, nil
+}
 func y_append(r map[string]map[string][]LadPopulationProjection, p LadPopulationProjection) map[string]map[string][]LadPopulationProjection {
 	_, ok := r[p.Code]
 	if !ok {
@@ -132,4 +139,17 @@ func y_append(r map[string]map[string][]LadPopulationProjection, p LadPopulation
 	}
 	r[p.Code][p.AgeRange] = append(r[p.Code][p.AgeRange], p)
 	return r
+}
+func z_append(r map[string]map[string]LadPopulationProjection, p LadPopulationProjection) (map[string]map[string]LadPopulationProjection, error) {
+	_, ok := r[p.Code]
+	if !ok {
+		r[p.Code] = map[string]LadPopulationProjection{p.AgeRange: p}
+		return r, nil
+	}
+	_, ok = r[p.Code][p.AgeRange]
+	if !ok {
+		r[p.Code][p.AgeRange] = p
+		return r, nil
+	}
+	return r, fmt.Errorf("already has entry for Code: %s  ageRange: %s", p.Code, p.AgeRange)
 }
