@@ -126,13 +126,13 @@ func Test01(t *testing.T) {
 func TestBaseCaseExplicitData(t *testing.T) {
 	// The term BaseCase is used when growth rates are being calculated and applied
 	// for only a single code and a single ageRange.
-	// In which case all entries in the slice []LadPopulationProjections has the same value
-	// for Code, TYpe, AgeRange.
+	// In which case all entries in the slice []LadPopulationProjections have the same value
+	// for Code, Type, AgeRange.
 	// In the calcs below the variables of types []GrowthRate and []EstimatedPopulation
 	// do not have fields for Code, Type, AgeRange but the common const values in
-	// the variables of type []LadPopulationProjection
+	// the variables of type []LadPopulationProjection are assumed
 	//
-	// this is a mockup of data from a database query where includeIntermediates == false
+	// This is a mockup of data from a database query where includeIntermediates == false
 	projectedPopsNoIntermediates := []LadPopulationProjection{
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 2000, Year: 2030},
