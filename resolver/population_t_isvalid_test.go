@@ -29,14 +29,14 @@ func TestValidPopVec(t *testing.T) {
 	assert.True(t, IsValidPopVec(projectedPops4))
 }
 func TestValidMapPopVec(t *testing.T) {
-	pm1 := map[string][]LadPopulationProjection{"LAD3": {
+	pm1 := map[string]map[string][]LadPopulationProjection{"LAD3": {"0-4": {
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 2000, Year: 2030},
-	}}
+	}}}
 	assert.False(t, IsValidMapOfPopVec(pm1))
-	pm2 := map[string][]LadPopulationProjection{"LAD1": {
+	pm2 := map[string]map[string][]LadPopulationProjection{"LAD1": {"0-4": {
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 2000, Year: 2030},
-	}}
+	}}}
 	assert.True(t, IsValidMapOfPopVec(pm2))
 }

@@ -45,7 +45,21 @@ type AgeRange = struct {
 	End   Age
 }
 
-func createAgeRange(start int, end int) (AgeRange, error) {
+func CreateAgeRanges(min int, max int, width int) ([]AgeRange, error) {
+	a := min
+	result := []AgeRange{}
+	for a <= max {
+		x, e := CreateAgeRange(a, a+width-1)
+		if e != nil {
+			return result, e
+		}
+		a = a + width
+		result = append(result, x)
+	}
+	return result, nil
+}
+
+func CreateAgeRange(start int, end int) (AgeRange, error) {
 	if start <= end {
 		s, err1 := int2Age(start)
 		e, err2 := int2Age(end)
@@ -57,6 +71,14 @@ func createAgeRange(start int, end int) (AgeRange, error) {
 }
 func AgeRangeToString(ar AgeRange) string {
 	return fmt.Sprintf("%d-%d", int(ar.Start), int(ar.End))
+}
+func AgeRangesContainAge(ranges []AgeRange, age int) (AgeRange, error) {
+	for _, v := range ranges {
+		if age >= int(v.Start) && age <= int(v.End) {
+			return v, nil
+		}
+	}
+	return AgeRange{}, fmt.Errorf("did not find %d in agre ranges", age)
 }
 
 // Takes a string of the form 2024-01-01 and extracts the year value as an int

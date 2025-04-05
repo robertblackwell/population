@@ -9,32 +9,47 @@ import (
 )
 
 // Test that forecast populations are the same as projected populations when the base year starting population
-// is equal to its projected population
-func TestSingleCodeVerify(t *testing.T) {
+// is equal to its projected population.
+// With Intermediates
+func TestBaseCaseVerifyWithIntermediates(t *testing.T) {
 	ctx := mockdb.Context{}
 	code := "E06000002"
-	projected_pops, ok := GetAllProjectedPopulationsByCodes(ctx, []string{"E06000002"}, 40, 42)
-	if ok != nil {
-		t.Errorf("GetAllProjectedPopulationByCode failed")
-	}
-	assert.True(t, IsValidMapOfPopVec(projected_pops))
+	ar := "20-24"
+	baseYearNum := 2023
 
-	rates := CalculateGrowthRatesAllYears(projected_pops[code], 2023)
-	years := make([]int, 0)
-	for i := 2018; i <= 2035; i++ {
-		years = append(years, i)
-	}
-	basePop, ok := FindBaseYearProjectedPopulation(projected_pops[code], 2023)
-	if ok != nil {
-		t.Errorf("something went wrong")
-	}
+	// get a slice of LadPopulationProjections
+	pp, er := GetProjectedPopulationsByCodes(ctx, []string{code}, 2020, 5, 20, 60, 10, true)
+	assert.True(t, er == nil)
 
-	pops := CalculateEstimatedPopulationsForSomeYears(rates, basePop, years)
-	if ok != nil {
-		t.Errorf("%v", ok)
-	}
+	// convert the slice of LadPopulationProjections into a structure more amenable to the rest of the processing
+	mpv := CollateProjectedPopulationsByCode(pp)
+	assert.True(t, IsValidMapOfPopVec(mpv))
 
-	for ix, el := range projected_pops[code] {
+	// get a slice of LadPopulationProjection for a single code and single age range.
+	// thats the input to the basic growth rate calculation for population forecase
+	projectedPopsForOneCodeOneAgeRange, ok := Index2LevelMap(mpv, code, ar)
+	assert.True(t, ok)
+	assert.True(t, IsValidPopVec(projectedPopsForOneCodeOneAgeRange))
+	// next line proves intermediates
+	assert.True(t, len(projectedPopsForOneCodeOneAgeRange) == 11)
+
+	// calculation of growth rates requires the population projection for the same code, same ageRange
+	// and baseYear (usually 2023). All growth rates are relative to the population in that base year.
+	// Sometimes that data will be available in the slice projectedPopsForOneCodeOneAgeRange
+	// but often not. So there is a function that will get it independently.
+	// Notice it required ageRange specification
+	baseYear, er := GetBaseYearProjectedPopulations(code, ar, baseYearNum, 5, 20, 60)
+	assert.True(t, er == nil)
+
+	// now calculate the growth rates, relative to baseYear for one code one ageRange
+	rates := CalculateGrowthRatesBaseCase(projectedPopsForOneCodeOneAgeRange, baseYear)
+
+	// Perform a population forecast. Such forecasts require starting population value for the base year.
+	// In this case we are using the projected population for the baseYear; if all is working this should result
+	// in our forecast populations being the same as the forecast populations.
+	pops := CalculateEstimatedPopulationsForSomeYears(rates, baseYear.TotalPopulation)
+
+	for ix, el := range projectedPopsForOneCodeOneAgeRange {
 		fmt.Printf("usingGrowthRates : %d  %d %d \n", el.Year, el.TotalPopulation, pops[ix].Population)
 		if el.TotalPopulation != pops[ix].Population {
 			t.Errorf("Failed code:%s ix: %d year: %d pop1: %d pop2:%d", code, ix, el.Year, el.TotalPopulation, pops[ix].Population)
@@ -42,35 +57,53 @@ func TestSingleCodeVerify(t *testing.T) {
 	}
 }
 
-func TestGetBackTheProjections(t *testing.T) {
+// Test that forecast populations are the same as projected populations when the base year starting population
+// is equal to its projected population.
+// This is a pretty obvious sanity test
+// Without Intermediates
+func TestBaseCaseVerifyWithOutIntermediates(t *testing.T) {
 	ctx := mockdb.Context{}
 	code := "E06000002"
-	projected_pops, ok := GetAllProjectedPopulationsByCodes(ctx, []string{"E06000002"}, 40, 42)
-	// x, err := mockdb.GetProjectedPopulationByCodes(mockdb.Context{}, []string{"XX", "YY"}, 2020, 2, 40, 42, 3, true)
-	if ok != nil {
-		t.Errorf("get all projected pops failed")
-	}
-	baseYearPops, e := GetProjectedPopulationsByCodeForBaseYear(ctx, []string{"E06000002"}, 2023, 40, 42)
-	if e != nil {
-		t.Errorf("get baseYear projected pops failed")
-	}
-	fmt.Printf("%v\n", baseYearPops)
-	rates := CalculateGrowthRatesAllYearsMultipleCodes(projected_pops, 2023)
-	allYears := make([]int, 0)
-	for i := 2018; i <= 2035; i++ {
-		allYears = append(allYears, i)
-	}
-	tmp := baseYearPops[code].TotalPopulation
-	baseYearPopulation := map[string]int{code: tmp}
-	pops, ok := CalculateEstimatedPopulationsForSomeYearsMultipleCodes(rates, baseYearPopulation, allYears)
-	if ok != nil {
-		t.Errorf("%v", ok)
-	}
+	ar := "20-24"
+	baseYearNum := 2023
 
-	for ix, el := range projected_pops[code] {
-		fmt.Printf("usingGrowthRates : %d  %d %d \n", el.Year, el.TotalPopulation, pops[code][ix].Population)
-		if el.TotalPopulation != pops[code][ix].Population {
-			t.Errorf("Failed code:%s ix: %d year: %d pop1: %d pop2:%d", code, ix, el.Year, el.TotalPopulation, pops[code][ix].Population)
+	// get a slice of LadPopulationProjections
+	pp, er := GetProjectedPopulationsByCodes(ctx, []string{code}, 2020, 5, 20, 60, 10, false)
+	assert.True(t, er == nil)
+
+	// convert the slice of LadPopulationProjections into a structure more amenable to the rest of the processing
+	mpv := CollateProjectedPopulationsByCode(pp)
+	assert.True(t, IsValidMapOfPopVec(mpv))
+
+	// get a slice of LadPopulationProjection for a single code and single age range.
+	// thats the input to the basic growth rate calculation for population forecase
+	projectedPopsForOneCodeOneAgeRange, ok := Index2LevelMap(mpv, code, ar)
+	assert.True(t, ok)
+	assert.True(t, IsValidPopVec(projectedPopsForOneCodeOneAgeRange))
+	// next line proves NO intermediates
+	assert.True(t, len(projectedPopsForOneCodeOneAgeRange) == 2)
+
+	// calculation of growth rates requires the population projection for the same code, same ageRange
+	// and baseYear (usually 2023). All growth rates are relative to the population in that base year.
+	// Sometimes that data will be available in the slice projectedPopsForOneCodeOneAgeRange
+	// but often not. So there is a function that will get it independently.
+	// Notice it required ageRange specification
+	baseYear, er := GetBaseYearProjectedPopulations(code, ar, baseYearNum, 5, 20, 60)
+	assert.True(t, er == nil)
+
+	// now calculate the growth rates, relative to baseYear for one code one ageRange
+	rates := CalculateGrowthRatesBaseCase(projectedPopsForOneCodeOneAgeRange, baseYear)
+
+	// Perform a population forecast. Such forecasts require starting population value for the base year.
+	// In this case we are using the projected population for the baseYear; if all is working this should result
+	// in our forecast populations being the same as the forecast populations.
+	pops := CalculateEstimatedPopulationsForSomeYears(rates, baseYear.TotalPopulation)
+
+	// check the expected result
+	for ix, el := range projectedPopsForOneCodeOneAgeRange {
+		fmt.Printf("usingGrowthRates : %d  %d %d \n", el.Year, el.TotalPopulation, pops[ix].Population)
+		if el.TotalPopulation != pops[ix].Population {
+			t.Errorf("Failed code:%s ix: %d year: %d pop1: %d pop2:%d", code, ix, el.Year, el.TotalPopulation, pops[ix].Population)
 		}
 	}
 }
@@ -83,19 +116,34 @@ func Test01(t *testing.T) {
 	}
 	baseYearPop := LadPopulationProjection{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1500, Year: 2023}
 
-	gr := CalculateGrowthRatesRelativeToBaseYear(projectedPops, baseYearPop)
-	estimated_pop := CalculateEstimatedPopulationsForSomeYears(gr, 1500, []int{2020, 2030})
+	gr := CalculateGrowthRatesBaseCase(projectedPops, baseYearPop)
+	estimated_pop := CalculateEstimatedPopulationsForSomeYears(gr, 1500)
 
 	assert.Equal(t, estimated_pop[0].Population, projectedPops[0].TotalPopulation, "2020 populations are the same")
 	assert.Equal(t, estimated_pop[1].Population, projectedPops[1].TotalPopulation, "2030 populations are the same")
 	fmt.Printf("%v\n", estimated_pop)
 }
-func Test02(t *testing.T) {
-	projectedPops1 := []LadPopulationProjection{
+func TestBaseCaseExplicitData(t *testing.T) {
+	// The term BaseCase is used when growth rates are being calculated and applied
+	// for only a single code and a single ageRange.
+	// In which case all entries in the slice []LadPopulationProjections has the same value
+	// for Code, TYpe, AgeRange.
+	// In the calcs below the variables of types []GrowthRate and []EstimatedPopulation
+	// do not have fields for Code, Type, AgeRange but the common const values in
+	// the variables of type []LadPopulationProjection
+	//
+
+	// this is a mockup of data from a database query where includeIntermediates == false
+	projectedPopsNoIntermediates := []LadPopulationProjection{
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 2000, Year: 2030},
 	}
-	projectedPops2 := []LadPopulationProjection{
+	// this verifies thatCode, Type, AgeRange fields all have the same value
+	// that is a prerequisite for growth and estimated population calculations
+	assert.True(t, IsValidPopVec(projectedPopsNoIntermediates))
+
+	// this is a mockup of a database query where includeIntermediates == true
+	projectedPopsWithIntermediates := []LadPopulationProjection{
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 821, Year: 2018},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 933, Year: 2019},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1000, Year: 2020}, // <<====== index 2
@@ -115,29 +163,39 @@ func Test02(t *testing.T) {
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1870, Year: 2034},
 		{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1860, Year: 2035},
 	}
+	// this verifies thatCode, Type, AgeRange fields all have the same value
+	// that is a prerequisite for growth and estimated population calculations
+	assert.True(t, IsValidPopVec(projectedPopsWithIntermediates))
+
 	baseYearPop := LadPopulationProjection{Code: "LAD1", Type: "type", AgeRange: "0-4", TotalPopulation: 1500, Year: 2023}
 
-	gr := CalculateGrowthRatesRelativeToBaseYear(projectedPops1, baseYearPop)
-	estimated_pop := CalculateEstimatedPopulationsForSomeYears(gr, baseYearPop.TotalPopulation, []int{2020, 2030})
+	gr := CalculateGrowthRatesBaseCase(projectedPopsNoIntermediates, baseYearPop)
+	estimatedPopsNoIntermediates := CalculateEstimatedPopulationsForSomeYears(gr, baseYearPop.TotalPopulation)
 
-	// without intermediaries we recompute the projected population values
-	assert.Equal(t, estimated_pop[0].Population, projectedPops1[0].TotalPopulation, "2020 populations are the same")
-	assert.Equal(t, estimated_pop[1].Population, projectedPops1[1].TotalPopulation, "2030 populations are the same")
+	// without intermediaries the estimated population calculated using growth rates
+	// are the same as the projected population values
+	assert.Equal(t, estimatedPopsNoIntermediates[0].Population, projectedPopsNoIntermediates[0].TotalPopulation, "2020 populations are the same")
+	assert.Equal(t, estimatedPopsNoIntermediates[1].Population, projectedPopsNoIntermediates[1].TotalPopulation, "2030 populations are the same")
 
-	gr2 := CalculateGrowthRatesRelativeToBaseYear(projectedPops2, baseYearPop)
-	estimated_pop2 := CalculateEstimatedPopulationsForSomeYears(gr2, baseYearPop.TotalPopulation, []int{2020, 2030})
+	gr2 := CalculateGrowthRatesBaseCase(projectedPopsWithIntermediates, baseYearPop)
+	estimatedPopsWithIntermediates := CalculateEstimatedPopulationsForSomeYears(gr2, baseYearPop.TotalPopulation)
 
-	// with intermediaries also recompute the projected population values
-	assert.Equal(t, estimated_pop2[0].Population, projectedPops2[2].TotalPopulation, "2020 populations are the same")
-	assert.Equal(t, estimated_pop2[1].Population, projectedPops2[12].TotalPopulation, "2030 populations are the same")
-	// both calculations get the same result
-	assert.Equal(t, estimated_pop2[0].Population, estimated_pop[0].Population, "2020 populations are the same")
-	assert.Equal(t, estimated_pop2[1].Population, estimated_pop[1].Population, "2030 populations are the same")
+	// with intermediaries the estimated populations calculated using growth rates
+	// are the same as the projected population values
+	assert.True(t, len(estimatedPopsWithIntermediates) == len(projectedPopsWithIntermediates))
+	for ix := range estimatedPopsWithIntermediates {
+		assert.Equal(t, estimatedPopsWithIntermediates[ix].Population, projectedPopsWithIntermediates[ix].TotalPopulation, "2020 populations are the same")
+	}
 
-	gr3 := CalculateGrowthRatesRelativeToBaseYear(projectedPops2, baseYearPop)
-	estimated_pop3 := CalculateEstimatedPopulationsForSomeYears(gr3, baseYearPop.TotalPopulation, []int{2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035})
-	assert.Equal(t, estimated_pop3[2].Population, estimated_pop[0].Population, "2020 populations are the same")
-	assert.Equal(t, estimated_pop3[12].Population, estimated_pop[1].Population, "2030 populations are the same")
+	// finally the results for the years 2020 and 2030 are the same with or with out intermediaries
+	// Warning: determined the matching indices manually
+	assert.Equal(t, estimatedPopsWithIntermediates[2].Population, estimatedPopsNoIntermediates[0].Population, "2020 populations are the same")
+	assert.Equal(t, estimatedPopsWithIntermediates[12].Population, estimatedPopsNoIntermediates[1].Population, "2030 populations are the same")
 
-	fmt.Printf("%v\n", estimated_pop)
+	// historical junk
+	// gr3 := CalculateGrowthRatesBaseCase(projectedPopsWithIntermediates, baseYearPop)
+	// estimated_pop3 := CalculateEstimatedPopulationsForSomeYears(gr3, baseYearPop.TotalPopulation)
+	// assert.Equal(t, estimated_pop3[2].Population, estimatedPopsNoIntermediates[0].Population, "2020 populations are the same")
+	// assert.Equal(t, estimated_pop3[12].Population, estimatedPopsNoIntermediates[1].Population, "2030 populations are the same")
+	// fmt.Printf("%v\n", estimatedPopsNoIntermediates)
 }

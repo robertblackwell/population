@@ -1,86 +1,24 @@
 package resolver
 
 import (
-	"errors"
 	"fmt"
 	"forecast_model/mockdb"
 	"maps"
 	"slices"
 )
 
-// Get the base year projected population for a list of codes
-func GetProjectedPopulationsByCodeForBaseYear(ctx mockdb.Context, codes []string, baseYear int, minAge int, maxAge int) (map[string]LadPopulationProjection, error) {
-	result := make(map[string]LadPopulationProjection, 0)
-	asSlice, e := GetProjectedPopulationsByCodeForYears(ctx, codes, []int{baseYear}, minAge, maxAge)
-	if e != nil {
-		return result, e
-	}
-	for k, v := range asSlice {
-		result[k] = v[0]
-	}
-	return result, nil
-}
-
-// Get projected population data for a set of codes for a set of years
-func GetProjectedPopulationsByCodeForYears(ctx mockdb.Context, codes []string, years []int, minAge int, maxAge int) (map[string][]LadPopulationProjection, error) {
-	// get projected pop data for all years and then filter out the ones we want
-	all, err := GetAllProjectedPopulationsByCodes(ctx, codes, minAge, maxAge)
-	result := make(map[string][]LadPopulationProjection, 0)
-	if err != nil {
-		return result, err
-	}
-	for k, v := range all {
-		for _, v := range v {
-			if slices.Contains(years, v.Year) {
-				_, e := result[k]
-				if !e {
-					result[k] = make([]LadPopulationProjection, 0)
-				}
-				result[k] = append(result[k], v)
-			}
-		}
-	}
-	return result, nil
-}
-
-// This is a mock version of a function that gets population project data.
-//
-// // It has the correct interface
-//
-// Will need to be re-implemented to use the sql database
-func GetAllProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, minAge int, maxAge int) (map[string][]LadPopulationProjection, error) {
-	target := mockdb.LoadMockDb()
-	valid_age_range := IsValidAge(minAge) && IsValidAge(maxAge) && minAge < maxAge
-	map_result := make(map[string][]LadPopulationProjection, 0)
-	if !valid_age_range {
-		return map_result, errors.New("invalid age range")
-	}
-	ageRangeString := fmt.Sprintf("%d-%d", minAge, maxAge)
-	fmt.Printf("Iam here")
-	for k1, v1 := range target {
-		if slices.Contains(codes, k1) {
-			keys := slices.Sorted(maps.Keys(v1))
-			for _, k2 := range keys {
-				v2 := v1[k2]
-				var p = LadPopulationProjection{
-					Code: k1, Type: v2[0].Type, AgeRange: ageRangeString, Year: int(YearFromDate(k2)), TotalPopulation: 0,
-				}
-				for _, j := range v2 {
-					if j.Age >= minAge && j.Age <= maxAge {
-						p.TotalPopulation = p.TotalPopulation + j.Value
-					}
-				}
-				_, ok := map_result[k1]
-				if !ok {
-					map_result[k1] = make([]LadPopulationProjection, 0)
-				}
-				map_result[k1] = append(map_result[k1], p)
-			}
-		}
-	}
-	fmt.Printf("I am here again")
-	return map_result, nil
-}
+// // Get the base year projected population for a list of codes
+// func GetProjectedPopulationsByCodeForBaseYear(ctx mockdb.Context, codes []string, baseYear int, minAge int, maxAge int) (map[string]LadPopulationProjection, error) {
+// 	result := make(map[string]LadPopulationProjection, 0)
+// 	asSlice, e := GetProjectedPopulationsByCodeForYears(ctx, codes, []int{baseYear}, minAge, maxAge)
+// 	if e != nil {
+// 		return result, e
+// 	}
+// 	for k, v := range asSlice {
+// 		result[k] = v[0]
+// 	}
+// 	return result, nil
+// }
 
 // This is a mock version of a function written for test purposes.
 //
@@ -88,36 +26,110 @@ func GetAllProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, minAg
 // amalgamate (ie sum over ages within the range)
 // amalgamate over codes - this is a mock function only one code is allowed and is ignored
 // startYear, rangesize, futureOffset, includeIntermediaries are ignored.
-func GetProjectedPopulationByCodes(ctx mockdb.Context, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) (map[string][]LadPopulationProjection, error) {
+// startyear and future offset define the years for which we want a forecast - one forecast for startYear and another for startYear+futureOffset
+// minAge, maxAge and rangeSize define the age ranges to be used in grouping results. If minAge is 20, maxAge is 60 and rangeSize is 5 we want the following groups:
+// 20-24, 25-29, 30-34, 35-39, 40-44, 45-49, 50-54, 55-59, 60-64
+func GetProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) ([]LadPopulationProjection, error) {
 	target := mockdb.LoadMockDb()
-	valid_age_range := IsValidAge(minAge) && IsValidAge(maxAge) && minAge < maxAge
-	map_result := make(map[string][]LadPopulationProjection, 0)
-	if !valid_age_range {
-		return map_result, errors.New("invalid age range")
+	map_result := make(map[string]map[string]map[int]LadPopulationProjection, 0)
+	flat_result := make([]LadPopulationProjection, 0)
+	ageRanges, err := CreateAgeRanges(minAge, maxAge, rangeSize)
+	if err != nil {
+		return flat_result, err
 	}
-	ageRangeString := fmt.Sprintf("%d-%d", minAge, maxAge)
-	fmt.Printf("Iam here")
-	for k1, v1 := range target {
-		if slices.Contains(codes, k1) {
-			keys := slices.Sorted(maps.Keys(v1))
-			for _, k2 := range keys {
-				v2 := v1[k2]
-				var p = LadPopulationProjection{
-					Code: k1, Type: v2[0].Type, AgeRange: ageRangeString, Year: int(YearFromDate(k2)), TotalPopulation: 0,
-				}
-				for _, j := range v2 {
-					if j.Age >= minAge && j.Age <= maxAge {
-						p.TotalPopulation = p.TotalPopulation + j.Value
+	fmt.Printf("%v", target)
+	for kode, v1 := range target {
+		if slices.Contains(codes, kode) {
+			ageKeys := slices.Sorted(maps.Keys(v1))
+			for _, age := range ageKeys {
+				v2 := v1[age]
+				r, err := AgeRangesContainAge(ageRanges, age)
+				if err == nil {
+					ageRangeString := AgeRangeToString(r)
+					dateKeys := slices.Sorted(maps.Keys(v2))
+					for _, dateK := range dateKeys {
+						jrec := target[kode][age][dateK]
+						map_result = Xadd(map_result, kode, ageRangeString, int(YearFromDate(dateK)), jrec)
 					}
 				}
-				_, ok := map_result[k1]
-				if !ok {
-					map_result[k1] = make([]LadPopulationProjection, 0)
+			}
+		}
+	}
+	for _, v1 := range map_result {
+		ageRangeKeys := slices.Sorted(maps.Keys(v1))
+		for _, arKey := range ageRangeKeys {
+			v2 := v1[arKey]
+			yearKeys := slices.Sorted(maps.Keys(v2))
+			for _, yearKey := range yearKeys {
+				if (includeIntermediates && yearKey >= startYear && yearKey <= (startYear+futureOffset)) ||
+					(yearKey == startYear || yearKey == (startYear+futureOffset)) {
+					flat_result = append(flat_result, v2[yearKey])
 				}
-				map_result[k1] = append(map_result[k1], p)
 			}
 		}
 	}
 	fmt.Printf("I am here again")
-	return map_result, nil
+	return flat_result, nil
+}
+func GetBaseYearProjectedPopulations(code string, ageRange string, baseYear int, rangeSize int, minAge int, maxAge int) (LadPopulationProjection, error) {
+	ctx := mockdb.Context{}
+	pp, er := GetProjectedPopulationsByCodes(ctx, []string{code}, baseYear, rangeSize, minAge, maxAge, 0, false)
+	if er != nil {
+		return LadPopulationProjection{}, er
+	}
+	pv := CollateProjectedPopulationsByCode(pp)
+	x1, ok := pv[code]
+	if !ok {
+		return LadPopulationProjection{}, fmt.Errorf("index by code %s failed", code)
+	}
+	x2, ok := x1[ageRange]
+	if !ok {
+		return LadPopulationProjection{}, fmt.Errorf("index by code %s and ageRange code %s failed", code, ageRange)
+	}
+	return x2[0], nil
+}
+
+func Xadd(m map[string]map[string]map[int]LadPopulationProjection, code string, ageRangeStr string, year int, jr mockdb.JsonRecord) map[string]map[string]map[int]LadPopulationProjection {
+	p := LadPopulationProjection{Code: code, Type: jr.Type, AgeRange: ageRangeStr, Year: year, TotalPopulation: jr.Value}
+	_, ok := m[code]
+	if !ok {
+		m[code] = map[string]map[int]LadPopulationProjection{ageRangeStr: map[int]LadPopulationProjection{year: p}}
+		return m
+	}
+	_, ok = m[code][ageRangeStr]
+	if !ok {
+		m[code][ageRangeStr] = map[int]LadPopulationProjection{year: p}
+		return m
+	}
+	_, ok = m[code][ageRangeStr][year]
+	if !ok {
+		m[code][ageRangeStr][year] = LadPopulationProjection{Code: code, Type: jr.Type, AgeRange: ageRangeStr, Year: year, TotalPopulation: jr.Value}
+	} else {
+		p2 := m[code][ageRangeStr][year]
+		p2.TotalPopulation = p2.TotalPopulation + p.TotalPopulation
+		m[code][ageRangeStr][year] = p2
+	}
+	return m
+}
+func CollateProjectedPopulationsByCode(pops []LadPopulationProjection) map[string]map[string][]LadPopulationProjection {
+
+	result := map[string]map[string][]LadPopulationProjection{}
+	for _, v := range pops {
+		result = y_append(result, v)
+	}
+	return result
+}
+func y_append(r map[string]map[string][]LadPopulationProjection, p LadPopulationProjection) map[string]map[string][]LadPopulationProjection {
+	_, ok := r[p.Code]
+	if !ok {
+		r[p.Code] = map[string][]LadPopulationProjection{p.AgeRange: {p}}
+		return r
+	}
+	_, ok = r[p.Code][p.AgeRange]
+	if !ok {
+		r[p.Code][p.AgeRange] = []LadPopulationProjection{p}
+		return r
+	}
+	r[p.Code][p.AgeRange] = append(r[p.Code][p.AgeRange], p)
+	return r
 }

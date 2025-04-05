@@ -28,7 +28,9 @@ type Context struct {
 //	map[string]map[string][]JsonRecord
 //
 // where the string index of the 1st map is 'Code' values and second index id date
-func LoadMockDb() map[string]map[string][]JsonRecord {
+//
+//	code      age      date
+func LoadMockDb() map[string]map[int]map[string]JsonRecord {
 	home_path := os.Getenv("HOME")
 	p := fmt.Sprintf("%s/%s/%s/%s", home_path, "Projects/popmodel", "mockdb", "prop-db.json")
 	fileName := p
@@ -39,18 +41,24 @@ func LoadMockDb() map[string]map[string][]JsonRecord {
 	var target []JsonRecord
 	json.Unmarshal([]byte(b), &target)
 	fmt.Println("Json marshall complete", len(target))
-	m := make(map[string]map[string][]JsonRecord, 0)
+	//            code       age        date
+	m := make(map[string]map[int]map[string]JsonRecord, 0)
 	for _, jr := range target {
 		code := jr.Code
 		_, ok := m[code]
 		if !ok {
-			m[code] = make(map[string][]JsonRecord, 0)
+			m[code] = make(map[int]map[string]JsonRecord, 0)
 		}
-		_, ok = m[code][jr.Date]
+		_, ok = m[code][jr.Age]
 		if !ok {
-			m[code][jr.Date] = make([]JsonRecord, 0)
+			m[code][jr.Age] = make(map[string]JsonRecord, 0)
 		}
-		m[code][jr.Date] = append(m[code][jr.Date], jr)
+		_, ok = m[code][jr.Age][jr.Date]
+		if ok {
+			panic("something went wrong")
+			// m[code][jr.Age][jr.Date] = make([]JsonRecord, 0)
+		}
+		m[code][jr.Age][jr.Date] = jr
 	}
 	return m
 }
