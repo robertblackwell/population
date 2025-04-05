@@ -7,29 +7,29 @@ import (
 )
 
 //	func TestGetProjectedPopulation(t *testing.T) {
-//		ctx := mockdb.Context{}
-//		m, ok := GetProjectedPopulationByCodes(ctx, []string{"E06000002", "E06000003"}, 2020, 5, 20, 60, 3, true)
-//		assert.True(t, ok == nil)
-//		tmp := CollateProjectedPopulationsByCode(m)
-//		assert.Equal(t, len(tmp["E06000002"]), (2035 - 2018 + 1))
-//		iv := IsValidMapOfPopVec(tmp)
-//		assert.True(t, iv)
-//		assert.True(t, IsValidMapOfPopVec(m))
-//		fmt.Printf("%v\n", tmp)
+//	    ctx := mockdb.Context{}
+//	    m, ok := GetProjectedPopulationByCodes(ctx, []string{"E06000002", "E06000003"}, 2020, 5, 20, 60, 3, true)
+//	    assert.True(t, ok == nil)
+//	    tmp := CollateProjectedPopulationsByCode(m)
+//	    assert.Equal(t, len(tmp["E06000002"]), (2035 - 2018 + 1))
+//	    iv := IsValidMapOfPopVec(tmp)
+//	    assert.True(t, iv)
+//	    assert.True(t, IsValidMapOfPopVec(m))
+//	    fmt.Printf("%v\n", tmp)
 //	}
 //
 //	func TestGetAllProjectedPopulation(t *testing.T) {
-//		ctx := mockdb.Context{}
-//		m, ok := GetAllProjectedPopulationsByCodes(ctx, []string{"E06000002", "E06000003"}, 40, 42)
-//		// x, err := mockdb.GetProjectedPopulationByCodes(mockdb.Context{}, []string{"XX", "YY"}, 2020, 2, 40, 42, 3, true)
-//		if ok != nil {
-//			return
-//		}
-//		assert.Equal(t, len(m["E06000002"]), (2035 - 2018 + 1))
-//		iv := IsValidMapOfPopVec(m)
-//		assert.True(t, iv)
-//		assert.True(t, IsValidMapOfPopVec(m))
-//		// fmt.Printf("%v\n", m)
+//	    ctx := mockdb.Context{}
+//	    m, ok := GetAllProjectedPopulationsByCodes(ctx, []string{"E06000002", "E06000003"}, 40, 42)
+//	    // x, err := mockdb.GetProjectedPopulationByCodes(mockdb.Context{}, []string{"XX", "YY"}, 2020, 2, 40, 42, 3, true)
+//	    if ok != nil {
+//	        return
+//	    }
+//	    assert.Equal(t, len(m["E06000002"]), (2035 - 2018 + 1))
+//	    iv := IsValidMapOfPopVec(m)
+//	    assert.True(t, iv)
+//	    assert.True(t, IsValidMapOfPopVec(m))
+//	    // fmt.Printf("%v\n", m)
 //	}
 func TestXadd(t *testing.T) {
 	m := map[string]map[string]map[int]LadPopulationProjection{}

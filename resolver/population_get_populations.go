@@ -9,15 +9,15 @@ import (
 
 // // Get the base year projected population for a list of codes
 // func GetProjectedPopulationsByCodeForBaseYear(ctx mockdb.Context, codes []string, baseYear int, minAge int, maxAge int) (map[string]LadPopulationProjection, error) {
-// 	result := make(map[string]LadPopulationProjection, 0)
-// 	asSlice, e := GetProjectedPopulationsByCodeForYears(ctx, codes, []int{baseYear}, minAge, maxAge)
-// 	if e != nil {
-// 		return result, e
-// 	}
-// 	for k, v := range asSlice {
-// 		result[k] = v[0]
-// 	}
-// 	return result, nil
+//     result := make(map[string]LadPopulationProjection, 0)
+//     asSlice, e := GetProjectedPopulationsByCodeForYears(ctx, codes, []int{baseYear}, minAge, maxAge)
+//     if e != nil {
+//         return result, e
+//     }
+//     for k, v := range asSlice {
+//         result[k] = v[0]
+//     }
+//     return result, nil
 // }
 
 // This is a mock version of a function written for test purposes.

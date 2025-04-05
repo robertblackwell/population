@@ -41,45 +41,45 @@ func CalculateGrowthRatesBaseCase(projected_pops []LadPopulationProjection, base
 // // For each year the growth rate is the projected population for that year divided by the projected population for the baseYear (usually 2022)
 // // The growth rate for baseYear is 1.0
 // func CalculateGrowthRatesAllYearsMultipleCodes(projected_pops map[string][]LadPopulationProjection, baseYear int) map[string][]GrowthRate {
-// 	result := make(map[string][]GrowthRate, 0)
-// 	for k, v := range projected_pops {
-// 		gr := CalculateGrowthRatesAllYears(v, baseYear)
-// 		result[k] = gr
-// 	}
-// 	return result
+//     result := make(map[string][]GrowthRate, 0)
+//     for k, v := range projected_pops {
+//         gr := CalculateGrowthRatesAllYears(v, baseYear)
+//         result[k] = gr
+//     }
+//     return result
 // }
 
 // // Calculate the growth rates of each years projected population relative to the projected population of the baseYear.
 // //
 // // NOTE: the projected_pops array MUST contain an entry for the baseYear
 // func CalculateGrowthRatesAllYears(projected_pops []LadPopulationProjection, baseYear int) []GrowthRate {
-// 	base_year_index, err := findBaseYearIndexInPopulationProjectsions(projected_pops, 2023)
-// 	if err != nil {
-// 		panic("CalculateGrowthRatesAllYears: could not find base year in projected_pops")
-// 	}
-// 	return CalculateGrowthRatesRelativeToBaseYear(projected_pops, projected_pops[base_year_index])
-// 	// growthRates := make([]GrowthRate, 0)
-// 	// for ix, pp := range projected_pops {
-// 	// 	var p float64
-// 	// 	if ix == base_year_index {
-// 	// 		p = 1.0
-// 	// 	} else if ix < base_year_index {
-// 	// 		p = float64(pp.TotalPopulation) / float64(projected_pops[base_year_index].TotalPopulation)
-// 	// 	} else {
-// 	// 		p = float64(pp.TotalPopulation) / float64(projected_pops[base_year_index].TotalPopulation)
-// 	// 	}
-// 	// 	growthRates = append(growthRates, GrowthRate{Year: pp.Year, RateFromBaseYear: p})
-// 	// }
-// 	// return growthRates
+//     base_year_index, err := findBaseYearIndexInPopulationProjectsions(projected_pops, 2023)
+//     if err != nil {
+//         panic("CalculateGrowthRatesAllYears: could not find base year in projected_pops")
+//     }
+//     return CalculateGrowthRatesRelativeToBaseYear(projected_pops, projected_pops[base_year_index])
+//     // growthRates := make([]GrowthRate, 0)
+//     // for ix, pp := range projected_pops {
+//     //     var p float64
+//     //     if ix == base_year_index {
+//     //         p = 1.0
+//     //     } else if ix < base_year_index {
+//     //         p = float64(pp.TotalPopulation) / float64(projected_pops[base_year_index].TotalPopulation)
+//     //     } else {
+//     //         p = float64(pp.TotalPopulation) / float64(projected_pops[base_year_index].TotalPopulation)
+//     //     }
+//     //     growthRates = append(growthRates, GrowthRate{Year: pp.Year, RateFromBaseYear: p})
+//     // }
+//     // return growthRates
 // }
 
 // func findBaseYearIndexInPopulationProjectsions(pop_projections []LadPopulationProjection, base_year int) (int, error) {
-// 	for i, el := range pop_projections {
-// 		if el.Year == base_year {
-// 			return i, nil
-// 		}
-// 	}
-// 	return 0, errors.New("could not find 2023")
+//     for i, el := range pop_projections {
+//         if el.Year == base_year {
+//             return i, nil
+//         }
+//     }
+//     return 0, errors.New("could not find 2023")
 // }
 
 // find the projected population for the base year
