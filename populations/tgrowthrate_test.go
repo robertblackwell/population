@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"testing"
 
+	"popmodel/cayvalues"
 	"popmodel/repo"
 
 	"github.com/stretchr/testify/assert"
@@ -241,14 +242,16 @@ func TestBaseCaseExplicitData(t *testing.T) {
 	assert.True(t, ok)
 	assert.Equal(t, cE2030, cP2030, "2030 populations are the same")
 
-	// // with intermediaries the estimated populations calculated using growth rates
-	// // are the same as the projected population values
-	// flag := true
-	// f = func(code string, ageRange string, year int, value int) (bool, error) {
-	// 	x, er := cayProjectedPopsWithIntermediates.At(code, ageRange, year)
-	// 	if er != nil || *x != value || flag
-
-	// }
+	// with intermediaries the estimated populations calculated using growth rates
+	// are the same as the projected population values
+	f := func(code string, ageRange string, year int, value int) (int, error) {
+		x, ok := cayProjectedPopsWithIntermediates.At(code, ageRange, year)
+		assert.True(t, ok)
+		assert.True(t, x == value)
+		return 0, nil
+	}
+	_, er2 := cayvalues.Map(cayEstimatedPopsWithIntermediates, f)
+	assert.True(t, er2 == nil)
 	// assert.True(t, len(estimatedPopsWithIntermediates) == len(projectedPopsWithIntermediates))
 	// for ix := range estimatedPopsWithIntermediates {
 	// 	assert.Equal(t, estimatedPopsWithIntermediates[ix].Population, projectedPopsWithIntermediates[ix].TotalPopulation, "2020 populations are the same")
