@@ -1,11 +1,41 @@
-package resolver
+package repo
 
 import (
 	"fmt"
-	"forecast_model/mockdb"
 	"maps"
 	"slices"
+
+	"popmodel/mockdb"
+
+	"popmodel/ageranges"
 )
+
+// copied from graphql project
+type Population struct {
+	AgeRange        string `db:"age_range"`
+	Sex             string `db:"sex"`
+	TotalPopulation int    `db:"total_population"`
+	Year            int    `db:"year"`
+}
+
+// copied from graphql project
+type LadPopulationProjection struct {
+	Code            string `db:"code"`
+	Type            string `db:"type"`
+	AgeRange        string `db:"age_range"`
+	TotalPopulation int    `db:"total_population"`
+	Year            int    `db:"year"`
+}
+
+func (lap LadPopulationProjection) GetCode() string {
+	return lap.Code
+}
+func (lap LadPopulationProjection) GetAgeRange() string {
+	return lap.AgeRange
+}
+func (lap LadPopulationProjection) GetYear() int {
+	return lap.Year
+}
 
 func GetParentCodes(ctx mockdb.Context, ladCode string) ([]string, error) {
 	return []string{ladCode}, nil
@@ -30,7 +60,7 @@ func GetProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, startYea
 	target := mockdb.LoadMockDb()
 	map_result := make(map[string]map[string]map[int]LadPopulationProjection, 0)
 	flat_result := make([]LadPopulationProjection, 0)
-	ageRanges, err := CreateAgeRanges(minAge, maxAge, rangeSize)
+	ageRanges, err := ageranges.CreateAgeRanges(minAge, maxAge, rangeSize)
 	if err != nil {
 		return flat_result, err
 	}
@@ -40,13 +70,13 @@ func GetProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, startYea
 			ageKeys := slices.Sorted(maps.Keys(v1))
 			for _, age := range ageKeys {
 				v2 := v1[age]
-				r, err := AgeRangesContainAge(ageRanges, age)
+				r, err := ageranges.AgeRangesContainAge(ageRanges, age)
 				if err == nil {
-					ageRangeString := AgeRangeToString(r)
+					ageRangeString := ageranges.AgeRangeToString(r)
 					dateKeys := slices.Sorted(maps.Keys(v2))
 					for _, dateK := range dateKeys {
 						jrec := target[kode][age][dateK]
-						map_result = Xadd(map_result, kode, ageRangeString, int(YearFromDate(dateK)), jrec)
+						map_result = Xadd(map_result, kode, ageRangeString, int(ageranges.YearFromDate(dateK)), jrec)
 					}
 				}
 			}

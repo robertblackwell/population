@@ -1,11 +1,8 @@
-package resolver
+package ageranges
 
 import (
 	"errors"
 	"fmt"
-	"maps"
-	"slices"
-	"sort"
 	"strconv"
 	"strings"
 )
@@ -102,12 +99,4 @@ func YearFromDate(dateStr string) Year {
 	} else {
 		panic("YearFromDate Atoi failed")
 	}
-}
-
-// Generic - Extracts the string keys from a value of type map[string]T
-// and sorts the keys
-func SortedMapKeys[T any](m map[string]T) []string {
-	keys := slices.Collect(maps.Keys(m))
-	sort.Strings(keys)
-	return keys
 }
