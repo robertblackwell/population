@@ -1,0 +1,604 @@
+"geographies": [
+    {
+      "code": "E00000046",
+      "ageRanges": [
+        {
+          "ageRange": "0-4",
+          "values": [8482],
+          "growthRates": [0.99]
+        },
+        {
+          "ageRange": "5-9",
+          "values": [8240],
+          "growthRates": [0.98]
+        },
+        {
+          "ageRange": "10-14",
+          "values": [8293],
+          "growthRates": [1]
+        },
+        {
+          "ageRange": "15-19",
+          "values": [8241],
+          "growthRates": [1.02]
+        },
+        {
+          "ageRange": "20-24",
+          "values": [8010],
+          "growthRates": [0.99]
+        },
+        {
+          "ageRange": "25-29",
+          "values": [9127],
+          "growthRates": [0.99]
+        },
+        {
+          "ageRange": "30-34",
+          "values": [8850],
+          "growthRates": [0.99]
+        },
+        {
+          "ageRange": "35-39",
+          "values": [9131],
+          "growthRates": [0.99]
+        },
+        {
+          "ageRange": "40-44",
+          "values": [8783],
+          "growthRates": [1.01]
+        },
+        {
+          "ageRange": "45-49",
+          "values": [7760],
+          "growthRates": [1.02]
+        },
+        {
+          "ageRange": "50-54",
+          "values": [6683],
+          "growthRates": [1.01]
+        },
+        {
+          "ageRange": "55-59",
+          "values": [5170],
+          "growthRates": [1.01]
+        },
+        {
+          "ageRange": "60-64",
+          "values": [4205],
+          "growthRates": [1.02]
+        },
+        {
+          "ageRange": "65-69",
+          "values": [2997],
+          "growthRates": [1.03]
+        },
+        {
+          "ageRange": "70-74",
+          "values": [2173],
+          "growthRates": [1.03]
+        },
+        {
+          "ageRange": "75-79",
+          "values": [1418],
+          "growthRates": [1.02]
+        },
+        {
+          "ageRange": "80-84",
+          "values": [1051],
+          "growthRates": [1]
+        },
+        {
+          "ageRange": "85-89",
+          "values": [597],
+          "growthRates": [1.01]
+        },
+        {
+          "ageRange": "90-94",
+          "values": [358],
+          "growthRates": [1.01]
+        }
+      ]
+    },
+    {
+      "code": "E09000002",
+      "ageRanges": [
+        {
+          "ageRange": "0-4",
+          "values": [17146],
+          "growthRates": [0.9932673267326733]
+        },
+        {
+          "ageRange": "5-9",
+          "values": [17738],
+          "growthRates": [0.9805089334055225]
+        },
+        {
+          "ageRange": "10-14",
+          "values": [18204],
+          "growthRates": [0.9985679097210288]
+        },
+        {
+          "ageRange": "15-19",
+          "values": [17119],
+          "growthRates": [1.0295347621536852]
+        },
+        {
+          "ageRange": "20-24",
+          "values": [13640],
+          "growthRates": [0.9949381327334084]
+        },
+        {
+          "ageRange": "25-29",
+          "values": [15928],
+          "growthRates": [0.9866498740554156]
+        },
+        {
+          "ageRange": "30-34",
+          "values": [16503],
+          "growthRates": [0.9897042841617572]
+        },
+        {
+          "ageRange": "35-39",
+          "values": [18272],
+          "growthRates": [0.9983779853459366]
+        },
+        {
+          "ageRange": "40-44",
+          "values": [17870],
+          "growthRates": [1.0141916782414397]
+        },
+        {
+          "ageRange": "45-49",
+          "values": [15238],
+          "growthRates": [1.010952380952381]
+        },
+        {
+          "ageRange": "50-54",
+          "values": [13992],
+          "growthRates": [1.0127112193636778]
+        },
+        {
+          "ageRange": "55-59",
+          "values": [11952],
+          "growthRates": [1.0088535145769988]
+        },
+        {
+          "ageRange": "60-64",
+          "values": [9400],
+          "growthRates": [1.0168589174800355]
+        },
+        {
+          "ageRange": "65-69",
+          "values": [6800],
+          "growthRates": [1.041112828438949]
+        },
+        {
+          "ageRange": "70-74",
+          "values": [4621],
+          "growthRates": [1.0127295492487478]
+        },
+        {
+          "ageRange": "75-79",
+          "values": [3708],
+          "growthRates": [1.0192968543484007]
+        },
+        {
+          "ageRange": "80-84",
+          "values": [2424],
+          "growthRates": [0.9932991722506898]
+        },
+        {
+          "ageRange": "85-89",
+          "values": [1634],
+          "growthRates": [0.9994029850746269]
+        },
+        {
+          "ageRange": "90-94",
+          "values": [838],
+          "growthRates": [0.9738562091503268]
+        }
+      ]
+    },
+    {
+      "code": "E09000025",
+      "ageRanges": [
+        {
+          "ageRange": "0-4",
+          "values": [24646],
+          "growthRates": [0.9913360514348439]
+        },
+        {
+          "ageRange": "5-9",
+          "values": [21750],
+          "growthRates": [0.9734927234927235]
+        },
+        {
+          "ageRange": "10-14",
+          "values": [22998],
+          "growthRates": [1.016697911671099]
+        },
+        {
+          "ageRange": "15-19",
+          "values": [23320],
+          "growthRates": [1.0124289121262153]
+        },
+        {
+          "ageRange": "20-24",
+          "values": [31069],
+          "growthRates": [0.9936661137083396]
+        },
+        {
+          "ageRange": "25-29",
+          "values": [42132],
+          "growthRates": [0.9917854149203689]
+        },
+        {
+          "ageRange": "30-34",
+          "values": [35256],
+          "growthRates": [0.9808952251166204]
+        },
+        {
+          "ageRange": "35-39",
+          "values": [31715],
+          "growthRates": [0.9923074739561157]
+        },
+        {
+          "ageRange": "40-44",
+          "values": [28063],
+          "growthRates": [1.0211290037161564]
+        },
+        {
+          "ageRange": "45-49",
+          "values": [23244],
+          "growthRates": [1.0278968988398862]
+        },
+        {
+          "ageRange": "50-54",
+          "values": [20370],
+          "growthRates": [0.9971474942212167]
+        },
+        {
+          "ageRange": "55-59",
+          "values": [17198],
+          "growthRates": [1.0223154362416107]
+        },
+        {
+          "ageRange": "60-64",
+          "values": [14030],
+          "growthRates": [1.0308415032679739]
+        },
+        {
+          "ageRange": "65-69",
+          "values": [10296],
+          "growthRates": [1.045716903344022]
+        },
+        {
+          "ageRange": "70-74",
+          "values": [7255],
+          "growthRates": [1.0444926058133606]
+        },
+        {
+          "ageRange": "75-79",
+          "values": [4558],
+          "growthRates": [1.029715528175394]
+        },
+        {
+          "ageRange": "80-84",
+          "values": [3088],
+          "growthRates": [1.0141749130783633]
+        },
+        {
+          "ageRange": "85-89",
+          "values": [1894],
+          "growthRates": [1.0223175965665237]
+        },
+        {
+          "ageRange": "90-94",
+          "values": [1017],
+          "growthRates": [1.0476190476190477]
+        }
+      ]
+    },
+    {
+      "code": "E09000026",
+      "ageRanges": [
+        {
+          "ageRange": "0-4",
+          "values": [21313],
+          "growthRates": [0.9890272835112692]
+        },
+        {
+          "ageRange": "5-9",
+          "values": [21016],
+          "growthRates": [0.9826268571699814]
+        },
+        {
+          "ageRange": "10-14",
+          "values": [21430],
+          "growthRates": [0.9976909755628247]
+        },
+        {
+          "ageRange": "15-19",
+          "values": [20516],
+          "growthRates": [1.0084709183122909]
+        },
+        {
+          "ageRange": "20-24",
+          "values": [19713],
+          "growthRates": [0.9882579635093636]
+        },
+        {
+          "ageRange": "25-29",
+          "values": [23284],
+          "growthRates": [0.994234086988105]
+        },
+        {
+          "ageRange": "30-34",
+          "values": [22861],
+          "growthRates": [0.9853875476493011]
+        },
+        {
+          "ageRange": "35-39",
+          "values": [23933],
+          "growthRates": [0.9869890708194884]
+        },
+        {
+          "ageRange": "40-44",
+          "values": [24790],
+          "growthRates": [1.006788726599465]
+        },
+        {
+          "ageRange": "45-49",
+          "values": [22413],
+          "growthRates": [1.0165963431786216]
+        },
+        {
+          "ageRange": "50-54",
+          "values": [19399],
+          "growthRates": [1.0040002078030028]
+        },
+        {
+          "ageRange": "55-59",
+          "values": [17630],
+          "growthRates": [1.0077714413507772]
+        },
+        {
+          "ageRange": "60-64",
+          "values": [15061],
+          "growthRates": [1.029413678662068]
+        },
+        {
+          "ageRange": "65-69",
+          "values": [12308],
+          "growthRates": [1.01540416071145]
+        },
+        {
+          "ageRange": "70-74",
+          "values": [9760],
+          "growthRates": [1.026225539640912]
+        },
+        {
+          "ageRange": "75-79",
+          "values": [7836],
+          "growthRates": [1.0257238722505282]
+        },
+        {
+          "ageRange": "80-84",
+          "values": [5040],
+          "growthRates": [1.0064067362255171]
+        },
+        {
+          "ageRange": "85-89",
+          "values": [3435],
+          "growthRates": [1.0141242937853108]
+        },
+        {
+          "ageRange": "90-94",
+          "values": [2079],
+          "growthRates": [1.0227858985382632]
+        }
+      ]
+    },
+    {
+      "code": "E12000007",
+      "ageRanges": [
+        {
+          "ageRange": "0-4",
+          "values": [521388],
+          "growthRates": [0.9922525398303699]
+        },
+        {
+          "ageRange": "5-9",
+          "values": [512001],
+          "growthRates": [0.9826631900002724]
+        },
+        {
+          "ageRange": "10-14",
+          "values": [537741],
+          "growthRates": [1.0041645875383525]
+        },
+        {
+          "ageRange": "15-19",
+          "values": [534404],
+          "growthRates": [1.0232500231631614]
+        },
+        {
+          "ageRange": "20-24",
+          "values": [614335],
+          "growthRates": [0.9963935553215519]
+        },
+        {
+          "ageRange": "25-29",
+          "values": [823028],
+          "growthRates": [0.9946095620993727]
+        },
+        {
+          "ageRange": "30-34",
+          "values": [785169],
+          "growthRates": [0.9884445316144087]
+        },
+        {
+          "ageRange": "35-39",
+          "values": [716336],
+          "growthRates": [0.9920121152607981]
+        },
+        {
+          "ageRange": "40-44",
+          "values": [671719],
+          "growthRates": [0.9995994299902718]
+        },
+        {
+          "ageRange": "45-49",
+          "values": [604987],
+          "growthRates": [1.0210280831716543]
+        },
+        {
+          "ageRange": "50-54",
+          "values": [564296],
+          "growthRates": [1.0005387170166584]
+        },
+        {
+          "ageRange": "55-59",
+          "values": [529120],
+          "growthRates": [1.0043366542451255]
+        },
+        {
+          "ageRange": "60-64",
+          "values": [448663],
+          "growthRates": [1.0320089852917205]
+        },
+        {
+          "ageRange": "65-69",
+          "values": [338902],
+          "growthRates": [1.0332664123669946]
+        },
+        {
+          "ageRange": "70-74",
+          "values": [263899],
+          "growthRates": [1.0108939568830164]
+        },
+        {
+          "ageRange": "75-79",
+          "values": [222525],
+          "growthRates": [1.0277049504439841]
+        },
+        {
+          "ageRange": "80-84",
+          "values": [143846],
+          "growthRates": [1.021447093918774]
+        },
+        {
+          "ageRange": "85-89",
+          "values": [93145],
+          "growthRates": [1.02523406945048]
+        },
+        {
+          "ageRange": "90-94",
+          "values": [54241],
+          "growthRates": [1.0194714661427802]
+        }
+      ]
+    },
+    {
+      "code": "E92000001",
+      "ageRanges": [
+        {
+          "ageRange": "0-4",
+          "values": [3058062],
+          "growthRates": [0.9978544071097931]
+        },
+        {
+          "ageRange": "5-9",
+          "values": [3297730],
+          "growthRates": [0.9847594228105756]
+        },
+        {
+          "ageRange": "10-14",
+          "values": [3543804],
+          "growthRates": [1.0042119544090435]
+        },
+        {
+          "ageRange": "15-19",
+          "values": [3485707],
+          "growthRates": [1.0236835985466224]
+        },
+        {
+          "ageRange": "20-24",
+          "values": [3439822],
+          "growthRates": [0.9952117801440754]
+        },
+        {
+          "ageRange": "25-29",
+          "values": [3741779],
+          "growthRates": [0.9904523353630119]
+        },
+        {
+          "ageRange": "30-34",
+          "values": [4003500],
+          "growthRates": [0.9975276271761696]
+        },
+        {
+          "ageRange": "35-39",
+          "values": [3978304],
+          "growthRates": [1.0069361445821126]
+        },
+        {
+          "ageRange": "40-44",
+          "values": [3805151],
+          "growthRates": [1.0057485315009962]
+        },
+        {
+          "ageRange": "45-49",
+          "values": [3458926],
+          "growthRates": [1.0071783676629722]
+        },
+        {
+          "ageRange": "50-54",
+          "values": [3729184],
+          "growthRates": [0.9790413711371866]
+        },
+        {
+          "ageRange": "55-59",
+          "values": [3857209],
+          "growthRates": [0.9982812979390038]
+        },
+        {
+          "ageRange": "60-64",
+          "values": [3567637],
+          "growthRates": [1.0279174920124827]
+        },
+        {
+          "ageRange": "65-69",
+          "values": [2950380],
+          "growthRates": [1.0234172352651252]
+        },
+        {
+          "ageRange": "70-74",
+          "values": [2570568],
+          "growthRates": [0.9924997646250998]
+        },
+        {
+          "ageRange": "75-79",
+          "values": [2436196],
+          "growthRates": [1.0205563724261386]
+        },
+        {
+          "ageRange": "80-84",
+          "values": [1542135],
+          "growthRates": [1.044463761816799]
+        },
+        {
+          "ageRange": "85-89",
+          "values": [950085],
+          "growthRates": [1.0267623680349918]
+        },
+        {
+          "ageRange": "90-94",
+          "values": [529035],
+          "growthRates": [1.0148559993920818]
+        }
+      ]
+    }
+  ],
+  "years": [2024]
+}

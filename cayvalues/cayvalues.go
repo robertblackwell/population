@@ -2,6 +2,8 @@ package cayvalues
 
 import (
 	"fmt"
+	"maps"
+	"slices"
 )
 
 //
@@ -17,6 +19,7 @@ import (
 type CayValues[T any] struct {
 	values map[string]map[string]map[int]T
 }
+type CayValuesx[T any] map[string]map[string]T
 
 type CayAble interface {
 	GetCode() string
@@ -34,7 +37,8 @@ func NewCayValues[T any]() CayValues[T] {
 // T must be CayAble.
 // Will fail if the input data has multiple values with the same code/ageRange/year
 //
-// That is will fail if the uniqueness of the index cannot ge assured
+// That is will fail if the uniqueness of the index cannot be assured
+// of the CheckKeys function fails
 func NewCayValuesFromArr[T CayAble](d []T) (CayValues[T], error) {
 	cv := NewCayValues[T]()
 	for _, v := range d {
@@ -43,6 +47,10 @@ func NewCayValuesFromArr[T CayAble](d []T) (CayValues[T], error) {
 			return cv, err
 		}
 	}
+	if err := cv.CheckKeys(); err != nil {
+		return NewCayValues[T](), err
+	}
+
 	return cv, nil
 }
 
@@ -51,6 +59,7 @@ func NewCayValuesFromArr[T CayAble](d []T) (CayValues[T], error) {
 //
 // This is a good place to use closures see the tests for CayValues for an example
 func NewCayValuesByTransform[T any, V any](ts []T, transform func(t T) (string, string, int, V)) (CayValues[V], error) {
+
 	tmp := NewCayValues[V]()
 	for _, tv := range ts {
 		code, ageRange, year, value := transform(tv)
@@ -114,5 +123,56 @@ func Map[T any, V any](iv CayValues[T], f func(code string, ageRange string, yea
 			}
 		}
 	}
+	if err := result.CheckKeys(); err != nil {
+		return result, err
+	}
 	return result, nil
+}
+
+// iterates over a CayValues in depth first order. The func f is called on each leaf node
+func Iterate[T any](iv CayValues[T], f func(code string, ageRange string, year int, t T) error) error {
+	for k1, v1 := range iv.values {
+		for k2, v2 := range v1 {
+			for k3, v3 := range v2 {
+				err := f(k1, k2, k3, v3)
+				if err != nil {
+					return err
+				}
+			}
+		}
+	}
+	return nil
+}
+
+// Check keys - each first level key must have the same set of 2nd level keys
+//
+//	each 2nd level key must have the same set of 3rd level keys
+func (cayv CayValues[T]) CheckKeys() error {
+	keys1 := slices.Collect(maps.Keys(cayv.values))
+	keys2 := slices.Collect(maps.Keys(cayv.values[keys1[0]]))
+	keys3 := slices.Collect(maps.Keys(cayv.values[keys1[0]][keys2[0]]))
+
+	for k1, v1 := range cayv.values {
+		if !slices.Contains(keys1, k1) {
+			return fmt.Errorf("top level key fail key: %s is extraneous ", k1)
+		}
+		if len(keys2) != len(slices.Collect(maps.Keys(v1))) {
+			return fmt.Errorf("second level key count failed key: %s ", k1)
+		}
+		for k2, v2 := range v1 {
+			if !slices.Contains(keys2, k2) {
+				return fmt.Errorf("2nd level key fail key: %s:%s is extraneous ", k1, k2)
+			}
+			if len(keys3) != len(slices.Collect(maps.Keys(v2))) {
+				return fmt.Errorf("3rd level key count failed key: %s:%s ", k1, k2)
+			}
+			for k3, _ := range v2 {
+				if !slices.Contains(keys3, k3) {
+					return fmt.Errorf("3rd level key fail key: %s:%s:%d is extraneous ", k1, k2, k3)
+				}
+
+			}
+		}
+	}
+	return nil
 }
