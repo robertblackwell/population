@@ -37,8 +37,11 @@ func TestIV(t *testing.T) {
 	assert.True(t, iv.Add("XXX", "two", 2024, 999) == nil)
 	assert.True(t, iv.Add("YYY", "two", 2023, 99) == nil)
 	assert.False(t, iv.Add("YYY", "two", 2023, 199) == nil)
-	vv, _ := iv.At("YYY", "two", 2023)
-	fmt.Printf("%v %v", iv, vv)
+	yyy, _ := iv.At("YYY", "two", 2023)
+	assert.Equal(t, 99, yyy)
+	zzz, _ := iv.At("ZZZ", "three", 2019)
+	assert.Equal(t, zzz, 101)
+	fmt.Printf("%v %v", iv, yyy)
 }
 func TestByTransform(t *testing.T) {
 	vArr := []anotherType{
