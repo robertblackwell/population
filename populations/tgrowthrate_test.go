@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"popmodel/cayvalues"
+	"popmodel/populations/cayvalues"
 	"popmodel/repo"
 
 	"github.com/stretchr/testify/assert"

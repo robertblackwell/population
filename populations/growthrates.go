@@ -3,7 +3,7 @@ package populations
 import (
 	"fmt"
 	"math"
-	"popmodel/cayvalues"
+	"popmodel/populations/cayvalues"
 )
 
 // projected_pops - A CayValue[int] where the values are projected populations as integers

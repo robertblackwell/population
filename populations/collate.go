@@ -1,7 +1,7 @@
 package populations
 
 import (
-	"popmodel/cayvalues"
+	"popmodel/populations/cayvalues"
 	"popmodel/repo"
 )
 

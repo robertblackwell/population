@@ -3,8 +3,8 @@ package populations
 import (
 	"fmt"
 	"math"
-	"popmodel/cayvalues"
-	"popmodel/mockdb"
+	"popmodel/populations/cayvalues"
+	"popmodel/populations/mockdb"
 	"popmodel/repo"
 	"testing"
 

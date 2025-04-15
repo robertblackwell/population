@@ -5,9 +5,9 @@ import (
 	"maps"
 	"slices"
 
-	"popmodel/mockdb"
+	"popmodel/populations/mockdb"
 
-	"popmodel/ageranges"
+	"popmodel/populations/ageranges"
 )
 
 // copied from graphql project
