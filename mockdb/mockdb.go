@@ -43,7 +43,7 @@ type Context struct {
 //	code      age      date
 func LoadProjectedMockDb(fName string) map[string]map[int]map[string]JsonProjectedPopulationRecord {
 	home_path := os.Getenv("HOME")
-	p := fmt.Sprintf("%s/%s/%s/%s", home_path, "Projects/popmodel", "mockdb", fName)
+	p := fmt.Sprintf("%s/%s/%s/%s/%s", home_path, "Projects/popmodel", "mockdb", "data", fName)
 	fileName := p
 	b, err := os.ReadFile(fileName)
 	if err != nil {
@@ -75,7 +75,7 @@ func LoadProjectedMockDb(fName string) map[string]map[int]map[string]JsonProject
 }
 func LoadCurrentMockDb(fName string) map[string]map[int]map[int]JsonCurrentPopulationRecord {
 	home_path := os.Getenv("HOME")
-	p := fmt.Sprintf("%s/%s/%s/%s", home_path, "Projects/popmodel", "mockdb", fName)
+	p := fmt.Sprintf("%s/%s/%s/%s/%s", home_path, "Projects/popmodel", "mockdb", "data", fName)
 	fileName := p
 	b, err := os.ReadFile(fileName)
 	if err != nil {
