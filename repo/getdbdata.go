@@ -40,9 +40,10 @@ func (lap LadPopulationProjection) GetYear() int {
 func GetParentCodes(ctx mockdb.Context, ladCode string) ([]string, error) {
 	return []string{ladCode}, nil
 }
-func GetCurrentPopulationsByCodes(ctx mockdb.Context, parents []string, rangeSize int, minAge int, maxAge int, currentPopulationYear int) ([]LadPopulationProjection, error) {
-	return []LadPopulationProjection{}, nil
-}
+
+//	func GetCurrentPopulationsByCodes(ctx mockdb.Context, parents []string, rangeSize int, minAge int, maxAge int, currentPopulationYear int) ([]LadPopulationProjection, error) {
+//		return []LadPopulationProjection{}, nil
+//	}
 func GetPopulationByCodes(ctx mockdb.Context, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) ([]LadPopulationProjection, error) {
 	return GetProjectedPopulationsByCodes(ctx, codes, startYear, rangeSize, minAge, maxAge, futureOffset, includeIntermediates)
 }
@@ -57,7 +58,13 @@ func GetPopulationByCodes(ctx mockdb.Context, codes []string, startYear, rangeSi
 // minAge, maxAge and rangeSize define the age ranges to be used in grouping results. If minAge is 20, maxAge is 60 and rangeSize is 5 we want the following groups:
 // 20-24, 25-29, 30-34, 35-39, 40-44, 45-49, 50-54, 55-59, 60-64
 func GetProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) ([]LadPopulationProjection, error) {
-	target := mockdb.LoadMockDb()
+	return GetProjectedByCode("population_projections_v2.json", codes, startYear, rangeSize, minAge, maxAge, futureOffset, includeIntermediates)
+}
+func GetCurrentPopulationsByCodes(ctx mockdb.Context, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) ([]LadPopulationProjection, error) {
+	return GetCurrentByCode("populations_v2.json", codes, startYear, rangeSize, minAge, maxAge, futureOffset, includeIntermediates)
+}
+func GetProjectedByCode(fname string, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) ([]LadPopulationProjection, error) {
+	target := mockdb.LoadProjectedMockDb(fname)
 	map_result := make(map[string]map[string]map[int]LadPopulationProjection, 0)
 	flat_result := make([]LadPopulationProjection, 0)
 	ageRanges, err := ageranges.CreateAgeRanges(minAge, maxAge, rangeSize)
@@ -76,7 +83,7 @@ func GetProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, startYea
 					dateKeys := slices.Sorted(maps.Keys(v2))
 					for _, dateK := range dateKeys {
 						jrec := target[kode][age][dateK]
-						map_result = Xadd(map_result, kode, ageRangeString, int(ageranges.YearFromDate(dateK)), jrec)
+						map_result = XaddProjected(map_result, kode, ageRangeString, int(ageranges.YearFromDate(dateK)), jrec)
 					}
 				}
 			}
@@ -98,6 +105,49 @@ func GetProjectedPopulationsByCodes(ctx mockdb.Context, codes []string, startYea
 	fmt.Printf("I am here again")
 	return flat_result, nil
 }
+func GetCurrentByCode(fname string, codes []string, startYear, rangeSize, minAge, maxAge, futureOffset int, includeIntermediates bool) ([]LadPopulationProjection, error) {
+	target := mockdb.LoadCurrentMockDb(fname)
+	map_result := make(map[string]map[string]map[int]LadPopulationProjection, 0)
+	flat_result := make([]LadPopulationProjection, 0)
+	ageRanges, err := ageranges.CreateAgeRanges(minAge, maxAge, rangeSize)
+	if err != nil {
+		return flat_result, err
+	}
+	fmt.Printf("%v", target)
+	for kode, v1 := range target {
+		if slices.Contains(codes, kode) {
+			ageKeys := slices.Sorted(maps.Keys(v1))
+			for _, age := range ageKeys {
+				v2 := v1[age]
+				r, err := ageranges.AgeRangesContainAge(ageRanges, age)
+				if err == nil {
+					ageRangeString := ageranges.AgeRangeToString(r)
+					dateKeys := slices.Sorted(maps.Keys(v2))
+					for _, dateK := range dateKeys {
+						jrec := target[kode][age][dateK]
+						map_result = XaddCurrent(map_result, kode, ageRangeString, dateK, jrec)
+					}
+				}
+			}
+		}
+	}
+	for _, v1 := range map_result {
+		ageRangeKeys := slices.Sorted(maps.Keys(v1))
+		for _, arKey := range ageRangeKeys {
+			v2 := v1[arKey]
+			yearKeys := slices.Sorted(maps.Keys(v2))
+			for _, yearKey := range yearKeys {
+				if (includeIntermediates && yearKey >= startYear && yearKey <= (startYear+futureOffset)) ||
+					(yearKey == startYear || yearKey == (startYear+futureOffset)) {
+					flat_result = append(flat_result, v2[yearKey])
+				}
+			}
+		}
+	}
+	fmt.Printf("I am here again")
+	return flat_result, nil
+}
+
 func GetBaseYearProjectedPopulations(code string, ageRange string, baseYear int, rangeSize int, minAge int, maxAge int) (LadPopulationProjection, error) {
 	ctx := mockdb.Context{}
 	pp, er := GetProjectedPopulationsByCodes(ctx, []string{code}, baseYear, rangeSize, minAge, maxAge, 0, false)
@@ -116,7 +166,29 @@ func GetBaseYearProjectedPopulations(code string, ageRange string, baseYear int,
 	return x2[0], nil
 }
 
-func Xadd(m map[string]map[string]map[int]LadPopulationProjection, code string, ageRangeStr string, year int, jr mockdb.JsonRecord) map[string]map[string]map[int]LadPopulationProjection {
+func XaddProjected(m map[string]map[string]map[int]LadPopulationProjection, code string, ageRangeStr string, year int, jr mockdb.JsonProjectedPopulationRecord) map[string]map[string]map[int]LadPopulationProjection {
+	p := LadPopulationProjection{Code: code, Type: jr.Type, AgeRange: ageRangeStr, Year: year, TotalPopulation: jr.Value}
+	_, ok := m[code]
+	if !ok {
+		m[code] = map[string]map[int]LadPopulationProjection{ageRangeStr: map[int]LadPopulationProjection{year: p}}
+		return m
+	}
+	_, ok = m[code][ageRangeStr]
+	if !ok {
+		m[code][ageRangeStr] = map[int]LadPopulationProjection{year: p}
+		return m
+	}
+	_, ok = m[code][ageRangeStr][year]
+	if !ok {
+		m[code][ageRangeStr][year] = LadPopulationProjection{Code: code, Type: jr.Type, AgeRange: ageRangeStr, Year: year, TotalPopulation: jr.Value}
+	} else {
+		p2 := m[code][ageRangeStr][year]
+		p2.TotalPopulation = p2.TotalPopulation + p.TotalPopulation
+		m[code][ageRangeStr][year] = p2
+	}
+	return m
+}
+func XaddCurrent(m map[string]map[string]map[int]LadPopulationProjection, code string, ageRangeStr string, year int, jr mockdb.JsonCurrentPopulationRecord) map[string]map[string]map[int]LadPopulationProjection {
 	p := LadPopulationProjection{Code: code, Type: jr.Type, AgeRange: ageRangeStr, Year: year, TotalPopulation: jr.Value}
 	_, ok := m[code]
 	if !ok {

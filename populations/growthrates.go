@@ -115,4 +115,5 @@ func CalcEstimatedPopulationsFlatResult(growthRates cayvalues.CayValues[float64]
 			res = append(res, v2)
 		}
 	}
+	return res, nil
 }

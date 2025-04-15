@@ -2,6 +2,9 @@ package cayvalues
 
 import (
 	"fmt"
+	"slices"
+	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -29,12 +32,28 @@ func (v vType) GetCode() string {
 func (v vType) GetYear() int {
 	return v.Year
 }
-
+func TestSortAgeRanges(t *testing.T) {
+	arr := []string{"90-94", "70-74", "75-79", "20-24", "15-19", "10-14", "5-9", "0-4", "5-9"}
+	arr2 := arr
+	slices.Sort(arr)
+	slices.SortFunc(arr2, func(a string, b string) int {
+		abits, _ := strconv.Atoi(strings.Split(a, "-")[0])
+		bbits, _ := strconv.Atoi(strings.Split(b, "-")[0])
+		if abits == bbits {
+			return 0
+		} else if abits < bbits {
+			return -1
+		} else {
+			return 1
+		}
+	})
+	fmt.Printf("%v", arr)
+}
 func TestIV(t *testing.T) {
 	iv := NewCayValues[int]()
 	assert.True(t, iv.Add("ZZZ", "three", 2019, 101) == nil)
-	assert.True(t, iv.Add("XXX", "two", 2023, 99) == nil)
-	assert.True(t, iv.Add("XXX", "two", 2024, 999) == nil)
+	assert.True(t, iv.Add("XXX", "0-4", 2023, 99) == nil)
+	assert.True(t, iv.Add("XXX", "5-9", 2024, 999) == nil)
 	assert.True(t, iv.Add("YYY", "two", 2023, 99) == nil)
 	assert.False(t, iv.Add("YYY", "two", 2023, 199) == nil)
 	yyy, _ := iv.At("YYY", "two", 2023)

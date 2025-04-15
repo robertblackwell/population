@@ -1,9 +1,13 @@
 package cayvalues
 
 import (
+	"cmp"
 	"fmt"
 	"maps"
 	"slices"
+	"sort"
+	"strconv"
+	"strings"
 )
 
 //
@@ -50,7 +54,9 @@ func NewCayValuesFromArr[T CayAble](d []T) (CayValues[T], error) {
 	if err := cv.CheckKeys(); err != nil {
 		return nil, err
 	}
-
+	if err := cv.CheckKeys(); err != nil {
+		panic(err)
+	}
 	return cv, nil
 }
 
@@ -67,6 +73,9 @@ func NewCayValuesByTransform[T any, V any](ts []T, transform func(t T) (string, 
 		if err != nil {
 			return nil, err
 		}
+	}
+	if err := tmp.CheckKeys(); err != nil {
+		panic(err)
 	}
 	return tmp, nil
 }
@@ -107,10 +116,24 @@ func (cayv CayValues[T]) At(code string, ageRange string, year int) (T, bool) {
 	return r, true
 }
 
+// get a value by index. Will return bool true if found and bool false if not found
+func (cayv *CayValues[T]) Set(code string, ageRange string, year int, value T) {
+	if _, ok := (*cayv)[code]; !ok {
+		(*cayv)[code] = map[string]map[int]T{ageRange: {year: value}}
+	} else if _, ok := (*cayv)[code][ageRange]; !ok {
+		(*cayv)[code][ageRange] = map[int]T{year: value}
+	} else if _, ok := (*cayv)[code][ageRange][year]; !ok {
+		(*cayv)[code][ageRange][year] = value
+	}
+}
+
 // Construct a new CayValue object by applying a function to each element of the input CayValues.
 //
 // This call will fail and return an error if the function f returns an error
 func Map[T any, V any](iv CayValues[T], f func(code string, ageRange string, year int, t T) (V, error)) (CayValues[V], error) {
+	if err := iv.CheckKeys(); err != nil {
+		panic(err)
+	}
 	result := NewCayValues[V]()
 	for k1, v1 := range iv {
 		for k2, v2 := range v1 {
@@ -130,10 +153,37 @@ func Map[T any, V any](iv CayValues[T], f func(code string, ageRange string, yea
 }
 
 // iterates over a CayValues in depth first order. The func f is called on each leaf node
-func Iterate[T any](iv CayValues[T], f func(code string, ageRange string, year int, t T) error) error {
-	for k1, v1 := range iv {
-		for k2, v2 := range v1 {
-			for k3, v3 := range v2 {
+func Iterate[T any](iv CayValues[T], f func(code string, ageRange string, year int, value T) error) error {
+	if err := iv.CheckKeys(); err != nil {
+		panic(err)
+	}
+	// a function for comparing age ranges for sorting. An age range is a string of the form "20-24"
+	// the will not sort correctly as strings as "20-24" preceeds "5-9"
+	comparef := func(a string, b string) int {
+		afirst, err1 := strconv.Atoi(strings.Split(a, "-")[0])
+		if err1 != nil {
+			panic(fmt.Errorf("failed comparing ageRanges %s is invalid as an ageRange", a))
+		}
+		bfirst, err2 := strconv.Atoi(strings.Split(b, "-")[0])
+		if err2 != nil {
+			panic(fmt.Errorf("failed comparing ageRanges %s is invalid as an ageRange", b))
+		}
+		return cmp.Compare(afirst, bfirst)
+	}
+	keys1 := (slices.Collect((maps.Keys(iv))))
+	sort.Strings(keys1)
+	for _, k1 := range keys1 {
+		v1 := iv[k1]
+
+		keys2 := slices.Collect(maps.Keys(v1))
+		slices.SortFunc(keys2, comparef)
+		for _, k2 := range keys2 {
+			v2 := v1[k2]
+
+			keys3 := slices.Collect(maps.Keys(v2))
+			sort.Ints(keys3)
+			for _, k3 := range keys3 {
+				v3 := v2[k3]
 				err := f(k1, k2, k3, v3)
 				if err != nil {
 					return err
