@@ -19,7 +19,16 @@ type LadPopulation struct {
 }
 
 func TestCaGrowthRates01(tt *testing.T) {
+	/*
+	   This function tests a calculation of forecast populations for an OA (output area).
 
+	   The process is in prinicple straight forward.
+
+	   a. find the LAD represented in the OA and the share of each LAD that contributes to the OA. The data struct below called
+	   	contributions provides that data
+
+	   b.	from c
+	*/
 	contributions := []LadPopulation{
 		LadPopulation{
 			LadCode:    "E09000002",

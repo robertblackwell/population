@@ -18,11 +18,12 @@ import (
 // -	Code identified a geographic region,
 // -	the ageRange is a string version of something like people between the age of 40 and 44 represented as "40-44"
 // -    the Year is a number like 2023 representing the year 2023
-//
+// - the values can be records or primitives like int and float64
 
-type CayValuesX[T any] struct {
-	values map[string]map[string]map[int]T
-}
+// type CayValuesX[T any] struct {
+// 	values map[string]map[string]map[int]T
+// }
+
 type CayValues[T any] map[string]map[string]map[int]T
 
 type CayAble interface {
